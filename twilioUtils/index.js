@@ -1,6 +1,6 @@
 const express= require ('express')
-const client = require('twilio')('AC3b1d795d78f099f794b0d107a4c215ae','2426943a4ff0aab16bc89c4f0de486fd');
 require("dotenv").config();
+const client = require('twilio')(process.env.twilio_api_key,process.env.twilio_api_token);
 const app= express()
 const PORT= 3001 
 
@@ -26,6 +26,7 @@ function sendMessage(){
      to: '+16784128322'
    })
   .then(message => console.log(message.sid));
-
+ 
 } 
+
 // console.log(process.env.twilio_api_key)
