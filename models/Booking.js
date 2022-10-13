@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class AppointmentService extends Model {}
+class Booking extends Model {}
 
-AppointmentService.init(
+Booking.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -46,4 +46,4 @@ AppointmentService.init(
     }
 ); 
 
-module.exports = AppointmentService; 
+module.exports = Booking; 

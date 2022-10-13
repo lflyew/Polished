@@ -12,4 +12,8 @@ router.get('/appointment', (req, res) => {
     res.render('appointment');
 });
 
+router.get('/manager', (req, res) => {
+    res.render('manager');
+});
+
 module.exports = router;

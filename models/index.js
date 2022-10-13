@@ -1,7 +1,7 @@
 const User = require('./User'); 
 const Service = require('./Service'); 
 const Appointment = require('./Appointment'); 
-const AppointmentService = require('./Appointment_Service'); 
+const Booking = require('./Booking'); 
 
 //One appointment belongsTo One customer 
 Appointment.belongsTo(User, {
@@ -14,11 +14,11 @@ User.hasMany(Appointment, {
 });
 
 // Many-to-many relationship between Appointment and Service
-Appointment.belongsToMany(Service, { through: AppointmentService, foreignKey: 'appointment_id', onDelete: 'SET NULL'});
-Service.belongsToMany(Appointment, { through: AppointmentService, foreignKey: 'service_id', onDelete: 'SET NULL'});
+Appointment.belongsToMany(Service, { through: Booking, foreignKey: 'appointment_id', onDelete: 'SET NULL'});
+Service.belongsToMany(Appointment, { through: Booking, foreignKey: 'service_id', onDelete: 'SET NULL'});
 
-// Technician hasMany AppointmentService bookings
-User.hasMany(AppointmentService, {
+// Technician hasMany bookings
+User.hasMany(Booking, {
     foreignKey: "user_id",
     onDelete: "SET NULL",
 });
@@ -27,6 +27,6 @@ module.exports = {
     User, 
     Service, 
     Appointment, 
-    AppointmentService
+    Booking
 }; 
 
