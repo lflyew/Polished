@@ -12,6 +12,12 @@
   - [Questions](#questions)
 
 ## Installation
+  ```
+  git clone ....
+  npm i -> install the packages
+  source schema.sql
+  npm run seed -> adding database
+  ```
   
 ## Features
   

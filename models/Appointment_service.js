@@ -1,10 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
-//need to set up config
 const sequelize = require('../config/connection');
 
-class Appointment_service extends Model {}
+class AppointmentService extends Model {}
 
-Appointment_service.init(
+AppointmentService.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -13,30 +12,38 @@ Appointment_service.init(
             autoIncrement: true,
         },
         appointment_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.INTEGER,
+            allowNull: true,
             references: {
                 model: 'appointment',
                 key: 'id',
               },
         }, 
         service_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
+            type: DataTypes.INTEGER,
+            allowNull: true,
             references: {
                 model: 'service',
                 key: 'id',
               },
-        }, 
-        technician_id: {
-            type: DataTypes.STRING,
-            allowNull: false,
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            defaultValue: null,
             references: {
                 model: 'user', 
                 key: 'id',
             }
         }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'appointmentservice',
     }
 ); 
 
-module.exports = Appointment_service; 
+module.exports = AppointmentService; 
