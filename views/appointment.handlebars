@@ -14,12 +14,14 @@
                 <input type="text" placeholder="Email" name="email"><br /><br />
             </div>
             <div> 
+                {{#each appointments as |appointment|}}
                 <label for="appointment">Book Here!</label><br/><br/>
                 <select name="Book Here!"><br /><br />
-                <option value="date">Date</option><br /><br />
-                <option value="time_slot">Choose an available time</option><br /><br />
-                <option value="service">Service</option>
+                <option value={{appointment.date}}>Date</option><br /><br />
+                <option value={{appointment.time_slot}}>Choose an available time</option><br /><br />
+                <option value={{appointment.server_id}}>Service</option>
                 </select><br/><br/>
+                {{/each}}
                 <input type="submit" value="Submit" id="submitButton" />
 {{#each appointments as |appointment|}}
 <p>{{appointment.date}}</p>
