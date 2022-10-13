@@ -9,7 +9,31 @@ router.get('/login', (req, res) => {
 });
 
 router.get('/appointment', (req, res) => {
-    res.render('appointment');
+    res.render('appointment',{
+        appointments:[
+            {
+                "date": "2022-10-14T00:00:00",
+                "time_slot": 1,
+                "user_id": 2
+            },
+            {
+                "date": "2022-10-20T00:00:00",
+                "time_slot": 5,
+                "user_id": 2
+            },
+            {
+                "date": "2022-10-25T00:00:00",
+                "time_slot": 1,
+                "user_id": 3
+            },
+            {
+                "date": "2022-10-20T00:00:00",
+                "time_slot": 4,
+                "user_id": 5
+            }
+        ]
+
+    });
 });
 
 module.exports = router;

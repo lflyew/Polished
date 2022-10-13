@@ -21,7 +21,9 @@
                 <option value="service">Service</option>
                 </select><br/><br/>
                 <input type="submit" value="Submit" id="submitButton" />
-
+{{#each appointments as |appointment|}}
+<p>{{appointment.date}}</p>
+{{/each}}
             </div>
         </fieldset>
     </form>
