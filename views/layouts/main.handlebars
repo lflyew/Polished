@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polished - Appointment Booking System for Nail Salon</title>
+  <title>Polished - Appointment Booking System for Nail Salons</title>
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -13,6 +13,12 @@
 <body>
     <header>
         <nav>
+        <button id="home-button">Home</button>
+        {{#if logged_in}} <!-- if user is logged in -->
+        <a id="apt-btn" href="/appointment">Appointment</a>
+        <a id="lougout-btn" href="/logout">logout</a> 
+        {{else}}
+        <a id="login-btn" href="/login">login</a> <!-- if user is not logged in THEN links to the login script (which we don't have yet) -->
         </nav>
     </header>
 
