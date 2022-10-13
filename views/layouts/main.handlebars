@@ -8,19 +8,20 @@
   <title>Polished - Appointment Booking System for Nail Salons</title>
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
+   {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
 </head>
 
 <body>
-    <header>
-        {{!-- <nav>
+    {{!-- <header>
+        <nav>
             <button id="home-button">Home</button>
             {{#if logged_in}} <!-- if user is logged in -->
             <a id="apt-btn" href="/appointment">Appointment</a>
-            <a id="lougout-btn" href="/logout">logout</a> 
+            <a id="logout-btn" href="/logout">logout</a> 
             {{else}}
-            <a id="login-btn" href="/login">login</a> <!-- if user is not logged in THEN links to the login script (which we don't have yet) -->
-        </nav> --}}
-    </header>
+            <a id="login-btn" href="/login">login</a> 
+        </nav>
+    </header> --}}
 
     <main>
         {{{ body }}}
