@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
     {
       host: 'localhost',
       dialect: 'mysql',
-      port: 3306 // This port is for local mysql, how about heroku?
+      // port: 3306 // This port is for local mysql, how about heroku?
     }
   );
 }
