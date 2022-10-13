@@ -1,7 +1,18 @@
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
-    res.render('home');
+
+    const services = [
+        {
+            "name": "Manicure",
+            "description": "To do manicure"
+        },
+        {
+            "name": "Pedicure",
+            "description": "To do pedicure"
+        }
+    ]
+    res.render('home', services);
 });
 
 router.get('/login', (req, res) => {
