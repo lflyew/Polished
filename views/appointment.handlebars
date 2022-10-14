@@ -1,8 +1,8 @@
 <div>
-    <h2 class="text-center">Book Your Appointment Today</h2>
-    <form class="appointmenForm">
+    <h2 class="text-center container-fluid" id="h2">Book Your Appointment Today</h2>
+    <form class="appointment">
         <fieldset>
-            <legend>Appointment Form</legend>
+            <legend id="appointmentForm">Appointment Form</legend>
             <div class="form-group">
                 <label for="name">Full Name:</label><br/><br/>
                 <input type="text" placeholder="First name" name="firstname"><br /><br />
@@ -13,19 +13,17 @@
                 <input type="text" placeholder="Email" name="email"><br /><br />
             </div>
             <div> 
-                {{#each services as |service|}}
+                
                 <label for="appointment">Book Here!</label><br/><br/>
+                {{#each services as |service|}}
                 <select name="Book Here!"><br /><br />
-                <option value={{appointment.date}}>Date</option><br /><br />
-                <option value={{appointment.time_slot}}>Choose an available time</option><br /><br />
-                <option value={{service.server_id}}>Service</option>
+                <option value={{this.name}}>Date</option><br /><br />
+                <option value={{this.name}}>Choose an available time</option><br /><br />
+                <option value={{this.name}}>Service</option>
                 </select><br/><br/>
                 {{/each}}
                 <input type="submit" value="Submit" id="submitButton" />
-{{#each appointments as |appointment|}}
-<p>{{appointment.date}}</p>
-<p>{{appointment.time_slot}}</p>
-{{/each}}
+
             </div>
         </fieldset>
     </form>

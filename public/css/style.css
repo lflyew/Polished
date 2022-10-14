@@ -1,3 +1,17 @@
-.appointmentForm{
-    background-color: #C9F0E9;
+#appointmentForm{
+    background-color: #C9F0E9; 
+    font-family:bebas ;
+}
+#h2{
+    background-color: #F7BE94;
+    font-family:bebas ;
+} 
+.appointment{
+    max-width: 450px;
+	background: #F7BE94;
+	padding: 30px;
+	margin: 50px auto;
+	box-shadow: 1px 1px 25px rgba(0, 0, 0, 0.35);
+	border-radius: 10px;
+	border: 6px solid #C9F0E9;
 }
