@@ -1,6 +1,6 @@
 <div>
-    <h2>Book Your Appointment Today</h2>
-    <form class="appointment form">
+    <h2 class="text-center">Book Your Appointment Today</h2>
+    <form class="appointmenForm">
         <fieldset>
             <legend>Appointment Form</legend>
             <div class="form-group">
@@ -13,12 +13,12 @@
                 <input type="text" placeholder="Email" name="email"><br /><br />
             </div>
             <div> 
-                {{#each appointments as |appointment|}}
+                {{#each services as |service|}}
                 <label for="appointment">Book Here!</label><br/><br/>
                 <select name="Book Here!"><br /><br />
                 <option value={{appointment.date}}>Date</option><br /><br />
                 <option value={{appointment.time_slot}}>Choose an available time</option><br /><br />
-                <option value={{appointment.server_id}}>Service</option>
+                <option value={{service.server_id}}>Service</option>
                 </select><br/><br/>
                 {{/each}}
                 <input type="submit" value="Submit" id="submitButton" />
