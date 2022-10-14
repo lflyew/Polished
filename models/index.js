@@ -6,11 +6,11 @@ const Booking = require('./Booking');
 //One appointment belongsTo One customer 
 Appointment.belongsTo(User, {
     foreignKey: 'user_id',
+    onDelete: 'CASCADE'
 })
 // Customer hasMany (book) many appointments
 User.hasMany(Appointment, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
 });
 
 // Many-to-many relationship between Appointment and Service

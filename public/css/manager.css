@@ -5,20 +5,31 @@ html, body {
   font-size: 14px;
 }
 
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+#booking {
+  border-width: 1px;
+  border-style: solid;
+  border-color: #1E252B;
+  width: 47vw;
+  margin: 20px 10px;
+}
+
 #calendar {
-  max-width: 800px;
-  margin: 40px auto;
+  width: 47vw;
+  margin: 20px 10px;
 }
 
 .fc-event {
   cursor: pointer;
 }
-
-/*
-i wish this required CSS was better documented :(
-https://github.com/FezVrasta/popper.js/issues/674
-derived from this CSS on this page: https://popper.js.org/tooltip-examples.html
-*/
 
 .popper,
 .tooltip {
