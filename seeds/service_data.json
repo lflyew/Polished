@@ -3,78 +3,84 @@
         "name": "Basic Manicure",
         "description": "This manicure includes nail trimming, shaping, buffing, cuticle grooming using cuticle softener, massage using lotion conditioner, ending with hot towel and color of your choice.",
         "price": 16,
-        "time_frame": 30
+        "time_frame": 30,
+        "image": "https://cdn.standardmedia.co.ke/images/wysiwyg/images/mFOJJtK1KdqKUTGkRtI9h3lsxlub36tp4Xlg2gfQ.jpg"
     },
     {
         "name": "Spa Manicure",
-        "description": "This manicure includes everything from the Spa Manicure with an additional Paraffin Treatment leaving your hand soft.",
+        "description": "This manicure includes everything from the Spa Manicure with an additional Paraffin Treatment leaving your hands soft.",
         "price": 23,
-        "time_frame": 30
+        "time_frame": 30,
+        "image": "https://s3.amazonaws.com/salonclouds-uploads/blog/blog_15474896391941328655.png"
     },
     {
         "name": "Allure Manicure",
         "description": "This manicure includes nail trimming, shaping, buffing, cuticle grooming using cuticle softener. Also includes Sugar Scrub for exfoliation, Paraffin Treatment for softening along with Massage. Ending with Hot Towel wraps and color of your choice.",
         "price": 30,
-        "time_frame": 45
+        "time_frame": 45,
+        "image": "https://www.thelist.com/img/gallery/is-buffing-actually-good-for-your-nails/why-nail-buffing-is-important-1579201444.jpg"
     },
     {
         "name": "Gel Manicure",
         "description": "This manicure includes nail trimming, shaping, buffing, cuticle grooming using cuticle softener. Massage using lotion conditioner follow by Hot Towel, and Gel Color of your choice. This Gel Color will stay longer than two weeks and do not damage your natural nails.",
         "price": 35,
-        "time_frame": 45
+        "time_frame": 45,
+        "image": "https://media.self.com/photos/5c48c3d39056dc2fa7dbd836/16:9/w_1280,h_720,c_limit/woman-getting-manicure.jpg"
     },
     {
         "name": "Basic Pedicure",
         "description": "This pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning of dead skin on the heels using softener and lotion conditioner for foot massage. Ending with hot towel and polish of your choice.",
         "price": 29,
-        "time_frame": 30
+        "time_frame": 30, 
+        "image": "https://m.footfiles.com/sites/mfen/files/styles/1024x768/public/images/what-is-a-pedicure-what-does-a-pedicure-feel-like.png"
     },
     {
         "name": "Spa Pedicure",
         "description": "This pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning of the dead skin on the heels using softener. Also includes Honey Sugar Scrub Exfoliation for soft and smooth skin, and lotion conditioner for Special Foot Massage Treatment. Ending with Hot Towel wraps and polish of your choice.",
         "price": 39,
-        "time_frame": 45
+        "time_frame": 45,
+        "image": "https://media.istockphoto.com/photos/closeup-shot-of-an-unrecognisable-woman-getting-a-foot-treatment-at-a-picture-id1325209102?k=20&m=1325209102&s=612x612&w=0&h=P7q8FScosDbafcrx_Zygarw3cnaQy7BqIRKOMGs2ocE="
     },
     {
         "name": "Allure Pedicure",
-        "description": "This Pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning dead skin on the heels using Callus Remover. Your choice of one VOESH’s 4-step formula-free skincare routine: Sea Salt Soak for softening, Sugar Scrub for moisturizing and exfoliating, Mud Masque for cooling and soothing sensation, Hot Stones for Deep Massage Sensation, Lotion Conditioner for an Extra Foot Massage. Ending with Hot Towel wraps and polish of your choice. This pedicure will remove all dry skin, leaving you with soft, smooth, and healthy skin.",
+        "description": "This Pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning dead skin on the heels using Callus Remover. Your choice of one of our 4-step formula-free skincare routines: Sea Salt Soak for softening, Sugar Scrub for moisturizing and exfoliating, Mud Masque for cooling and soothing sensation, Hot Stones for Deep Massage Sensation, Lotion Conditioner for an Extra Foot Massage. Ending with Hot Towel wraps and polish of your choice. This pedicure will remove all dry skin, leaving you with soft, smooth, and healthy skin.",
         "price": 49,
-        "time_frame": 45
+        "time_frame": 45,
+        "image": "https://media.istockphoto.com/photos/hot-stone-feet-massage-picture-id525953631?k=20&m=525953631&s=612x612&w=0&h=LkMVWt9eQawANvCahhyfq1_FfV1JYhhCeXtQ4UbobT0="
     },
     {
-        "name": "Super Deluxe Manicure",
-        "description": "This Pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning the dead skin on the heels using Callus Remover. Also includes PEARL SPA’s 6 steps skincare treatment: Soak, Clean, Scrub, Foot Mask, Massage Cream, and Natural Herbs Cream. In addition, this pedicure also uses Hot Stones for Deep Massage Sensation with 20 minutes of relaxation while being treated by Noire’s Special Foot Massage Treatment, Hot Towel wraps. Ending with Paraffin Treatment and polish of your choice. This pedicure will help dry skin and cracked heels, leaving you with soft and smooth skin with the additional health benefits of Reflexology.",
+        "name": "Super Deluxe Pedicure",
+        "description": "This Pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning the dead skin on the heels using Callus Remover. Also includes our 6 steps skincare treatment: Soak, Clean, Scrub, Foot Mask, Massage Cream, and Natural Herbs Cream. In addition, this pedicure also uses Hot Stones for Deep Massage Sensation with 20 minutes of relaxation while being treated with our Special Foot Massage Treatment, Hot Towel wraps. Ending with Paraffin Treatment and polish of your choice. This pedicure will help dry skin and cracked heels, leaving you with soft and smooth skin with the additional health benefits of Reflexology.",
         "price": 59,
-        "time_frame": 60
+        "time_frame": 60, 
+        "image": "https://images.beautyanswered.com/slideshow-mobile-small/pedicure.jpg"
     },
     {
         "name": "Kid Manicure",
         "description": "This manicure is for kids under 10 including nail trimming, shaping, buffing, cuticle grooming using cuticle softener, and color of your choice with a simple design.",
         "price": 10,
-        "time_frame": 15
+        "time_frame": 15, 
+        "image": "https://img.grouponcdn.com/deal/a4Li7HSSe66kA2BMf5sM/vS-700x420/v1/c870x524.jpg"
     },
     {
         "name": "Kid Pedicure",
         "description": "This pedicure is for kids under 10 including nail trimming, shaping, buffing, cuticle grooming, cleaning of dead skin on the heels using softener and lotion conditioner for foot massage, and finally polish of your choice with a simple design.",
         "price": 20,
-        "time_frame": 30
+        "time_frame": 30, 
+        "image": "https://img.grouponcdn.com/bynder/3RxYoEvXDueDt3F6VUSyCsdW1kdC/3R-2048x1229/v1/c870x524.jpg"
     },
     {
         "name": "SNS Nails",
         "description": "A dipping powder process, which is natural and healthy for your nails using no liquid primer and UV light, helps your nails to keep its strength and healthy.",
         "price": 45,
-        "time_frame": 60
+        "time_frame": 60, 
+        "image": "https://getitohm.com/wp-content/uploads/Dip-Powder-Vs-Acrylic-Powder.jpg"
     },
     {
         "name": "Acrylic Nails with Gel Color",
-        "description": "An option for those who do not have strong nails. A Thin acrylic layer is applied giving your nails a long and natural looking appearance.",
+        "description": "An option for those who do not have strong nails. A thin acrylic layer is applied giving your nails a long and natural looking appearance.",
         "price": 50,
-        "time_frame": 60
-    },
-    {
-        "name": "Eyebrow Wax",
-        "description": "",
-        "price": 12,
-        "time_frame": 15
+        "time_frame": 60, 
+        "image": "https://img.grouponcdn.com/seocms/NDPmR2CMY1WLWjL5CVv8ij4k6om/woman_getting_acrylic_nails_applied_at_a_salon_jpg-600x390"
     }
 ]

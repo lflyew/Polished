@@ -1,8 +1,19 @@
 #title {
-    font-size: 25px;
+    font-family: 'Bebas Neue', cursive;
+    font-size: 90px;
 }
 
-h1 {
-    font-size: 25px;
-    color: blue;
+#review {
+    font-size: 30px;
 }
+
+#home-btn, #login-btn {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 20px;
+    background-color: #f7be94;
+}
+
+header {
+    background-color: #c9f0e9;
+}
+
