@@ -10,7 +10,9 @@
     {{#each services as |service| }}
     <ul class="service-list">
         <li>
-        <a href="/service/{{service.id}}" id="image" src={{service.image_link}}></a>
+        <a href="/service/{{service.id}}">
+            <img id="image" src={{service.image_link}}>
+        </a>
         <h3>{{service.name}}</h3>
         <a id="description"class="">{{service.description}}</a>
         </li>

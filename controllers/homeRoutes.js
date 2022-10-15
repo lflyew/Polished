@@ -3,14 +3,15 @@ const Service = require('../models/Service');
 
 router.get('/', async (req, res) => {
     try {
-        const servData = await Service.findAll({raw: true});
+        const servData = await Service.findAll();
         // im faking image link NOW
-        const services = servData.map((serv) => serv.image_link = "https://picsum.photos/200");
-        console.log(servData);
-        if (!servData) res.status(404).json({"messange":"there is no services"});
+        var services = servData.map((serv) => serv.get({ plain: true}));
+        services.map((serv) => {
+            serv.image_link = "https://picsum.photos/200";
+        });
+        if (!services) res.status(404).json({"messange":"there is no services"});
         else {
-            console.log(servData);
-            res.render('home', {services: servData});
+            res.render('home', {services: services});
         }
     } catch(err) {
         res.status(400).json(err);
