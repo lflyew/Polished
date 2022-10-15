@@ -65,25 +65,25 @@ router.get('/appointment', (req, res) => {
             "time_frame": 15
         },
         {
-            "name": "Kid Pedicure",
+            name: "Kid Pedicure",
             "description": "This pedicure is for kids under 10 including nail trimming, shaping, buffing, cuticle grooming, cleaning of dead skin on the heels using softener and lotion conditioner for foot massage, and finally polish of your choice with a simple design.",
             "price": 20,
             "time_frame": 30
         },
         {
-            "name": "SNS Nails",
+            name: "SNS Nails",
             "description": "A dipping powder process, which is natural and healthy for your nails using no liquid primer and UV light, helps your nails to keep its strength and healthy.",
             "price": 45,
             "time_frame": 60
         },
         {
-            "name": "Acrylic Nails with Gel Color",
+            name: "Acrylic Nails with Gel Color",
             "description": "An option for those who do not have strong nails. A Thin acrylic layer is applied giving your nails a long and natural looking appearance.",
             "price": 50,
             "time_frame": 60
         },
         {
-            "name": "Eyebrow Wax",
+            name: "Eyebrow Wax",
             "description": "",
             "price": 12,
             "time_frame": 15

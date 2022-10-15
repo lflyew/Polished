@@ -4,30 +4,29 @@
         <fieldset>
             <legend id="appointmentForm">Appointment Form</legend>
             <div class="form-group">
-                <label for="name">Full Name:</label><br/><br/>
+                <label for="name">Full Name:</label><br /><br />
                 <input type="text" placeholder="First name" name="firstname"><br /><br />
                 <input type="text" placeholder="Last name" name="lastname"><br /><br />
             </div>
             <div>
-                <label for="email">Email</label><br/><br/>
+                <label for="email">Email</label><br /><br />
                 <input type="text" placeholder="Email" name="email"><br /><br />
             </div>
-            <div> 
-                
-                <label for="appointment">Book Here!</label><br/><br/>
-                {{#each services as |service|}}
+            <div>
+
+                <label for="appointment">Book Here!</label><br /><br />
                 <select name="Book Here!"><br /><br />
-                <option value={{this.name}}>Date</option><br /><br />
-                <option value={{this.name}}>Choose an available time</option><br /><br />
-                <option value={{this.name}}>Service</option>
-                </select><br/><br/>
-                {{/each}}
-                <input type="submit" value="Submit" id="submitButton" />
+                    <option value={{#each services as |service|}} >
+                         {{service.name}}  
+                          {{/each}}
+                          </option>
+                    <br /><br />
+
+                    <input type="submit" value="Submit" id="submitButton" />
 
             </div>
         </fieldset>
     </form>
-
 
 
 </div>
