@@ -1,3 +1,7 @@
+var index = 0;
+var servInput;
+var techInput;
+
 const getFormattedDate = (dateStr, timeSlot) => {
   const date = new Date(dateStr);
   var year = date.getFullYear();
@@ -15,8 +19,10 @@ const getFormattedDate = (dateStr, timeSlot) => {
   return year + '-' + month + '-' + day + "T" + hour + ":" + minute + ":00";
 }
 
-const managerBtnHandler = async function() {
-
+const calendarAppoinmentHandler = async function() {
+  var bookingDiv = document.getElementById('booking');
+  var calendarEl = document.getElementById('calendar');
+  if (calendarEl.style.display == "block") return;
   // get all appointments
   const response = await fetch('/api/appointments', {
     method: 'GET',
@@ -40,8 +46,6 @@ const managerBtnHandler = async function() {
     });
     
     // get calendar div and render appt datas into
-    var bookingDiv = document.getElementById('booking');
-    var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       plugins: [ 'dayGrid' ],
       initialView: 'dayGridMonth',
@@ -63,8 +67,63 @@ const managerBtnHandler = async function() {
   
   // if not found anymore or fail
   } else {
-    alert('Failed to log out');
+    alert('Failed ON server');
+  } 
+}
+
+const fetchAllServices = async function() {
+  servInput = document.createElement("select");
+  const response = await fetch('/api/services', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    const servData = await response.json();
+    var services = servData.services;
+    for (let i = 0; i <= services.length; i++) {
+      const servOpt = document.createElement("option");
+      if (i==0) servOpt.innerHTML = "Please pick a service.";
+      else {
+        servOpt.innerHTML = services[i-1].name;
+        servOpt.value = services[i-1].id;
+      }
+      servInput.append(servOpt);
+    }
+  } else {
+    alert('Failed ON server');
   }
+}
+
+const fetchAllTechnicians = async function() {
+  techInput = document.createElement("select");
+  const response = await fetch('/api/users?role=technician', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  });
+  if (response.ok) {
+    const technicians = await response.json();
+    for (let i = -1; i <= technicians.length; i++) {
+      const techOpt = document.createElement("option");
+      if (i==-1) techOpt.innerHTML = "Please pick a service.";
+      else if (i==0) {
+        techOpt.innerHTML = "Any technicians";
+        techOpt.value = 0;
+      } else {
+        techOpt.innerHTML = technicians[i-1].first_name;
+        techOpt.value = technicians[i-1].id;
+      }
+      techInput.append(techOpt);
+    }
+  } else {
+    alert('Failed ON server');
+  }
+}
+
+const managerBtnHandler = async function(event) {
+  await calendarAppoinmentHandler();
+  await fetchAllServices();
+  await fetchAllTechnicians();
+  event.target.style.display = "none";
 };
 
 document
@@ -102,4 +161,4 @@ const customerSearchHandler = async function() {
 
 document
   .querySelector('#customer-search-btn')
-  .addEventListener('click', customerSearchHandler)
+  .addEventListener('click', customerSearchHandler);
