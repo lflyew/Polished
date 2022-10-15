@@ -1,18 +1,20 @@
 const router = require('express').Router();
+const Service = require('../models/Service');
 
-router.get('/', (req, res) => {
-
-    const services = [
-        {
-            "name": "Manicure",
-            "description": "To do manicure"
-        },
-        {
-            "name": "Pedicure",
-            "description": "To do pedicure"
+router.get('/', async (req, res) => {
+    try {
+        const servData = await Service.findAll({raw: true});
+        // im faking image link NOW
+        const services = servData.map((serv) => serv.image_link = "https://picsum.photos/200");
+        console.log(servData);
+        if (!servData) res.status(404).json({"messange":"there is no services"});
+        else {
+            console.log(servData);
+            res.render('home', {services: servData});
         }
-    ]
-    res.render('home', services);
+    } catch(err) {
+        res.status(400).json(err);
+    }
 });
 
 router.get('/login', (req, res) => {

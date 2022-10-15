@@ -7,11 +7,11 @@
 
     <ul class="service-list">
         {{#each services as |service| }}
-        <img src=""> <!-- store links in the db -->
-        <h3>{{service.name}}</h3>
-        <p>{{service.description}}</p>
+            <img src="{{service.image_link}}"> <!-- store links in the db -->
+            <h3>{{service.name}}</h3>
+            <p>{{service.description}}</p>
         {{/each}}
     </ul>
-        
 </div>
 
+<script src="/javascript/home.js"></script>
