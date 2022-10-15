@@ -1,0 +1,99 @@
+/* Create two equal columns that floats next to each other */
+.column1 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 534x; /* Should be removed. Only for demonstration */
+    border-radius: 20px;
+    border: 2px solid;
+  }
+  .logo{
+    float: left;
+    width: 50%;
+  }
+  .column2 {
+    float: right;
+    width: 45%;
+    padding: 10px;
+    height: 450px; /* Should be removed. Only for demonstration */
+    border-radius: 20px;
+    border: 2px solid; }
+  .title{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    background-color:#588c7e; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+  }
+  .header-right {
+    margin-right: 10px;
+    background-color:#aaa;
+    margin-left: 100px;
+
+    float:right;  }
+  h3 {
+    float:right; 
+    padding-top: 100px;
+    margin-right: 10px;
+ 
+  }
+  hr{
+    
+    margin-top: 11%;
+    height: 8px;
+    background:#588c7e;
+    
+}
+  #country{
+    padding-right: 255px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 2px;
+  }
+  input{
+    padding-right: 200px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-left: 2px;
+  }
+  
+  .container{
+    padding-top: 5%;
+    padding-bottom: 10%;
+    padding-left: 20%;
+    background-color: #96ceb4;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+  }
+  label{
+    font-weight: bold;
+  }
+  a{color: ivory;
+    font-weight: bold;
+    padding-right: 10px;}
+  i{
+    font-size: small;
+    color: grey;
+  }
+  P{
+    color: red;
+    font-weight: bold;
+  }
+  .btn{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 10%;
+    padding-right: 10%;
+    border-radius: 20px;
+    color: seagreen;
+    font-weight: bold;
+    margin-left:20%;
+  }
+  #LoginFooter{
+    margin-top:5%;
+    background-color:#aaa ;
+    text-align: center;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }

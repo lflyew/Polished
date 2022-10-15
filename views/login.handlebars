@@ -1,7 +1,68 @@
+<div class="header">
+  <div class="logo"><img src="logo.jpeg" alt="Logo" width="150" height="150"></div>
+  <div class="header-right">
+    <a href="#">Sign Up/Login</a>
+    <a href="#">Home</a>
+    <a href="#">Help</a>
+    
+  </div>
+</div><br>
+<h3>Sign Up/Login</h3>
+<hr id="hrline">
+      <!-- Registration-->
+    <div class="column1" >
+      
+      <form>
+        <div class="title">First time here? Sign Up! <span style="color: red; float:right;">All fields are required!!!</span></div>
+    <div class="container">
+          <label>First Name</label><br>
+          <input type="text" required><br>
+          <label>Last Name</label><br>
+          <input type="text" required><br>
+          <label>Email</label><br>
+          <input type="text" required><br>
+           <label>Country</label><br>
+           <select id="country" required>
+            <option value="USA" selected>United States </option>
+            <option value="Uk">United Kingdom</option>
+            <option value="Spain">Spain</option>
+            <option value="Germany">Germany</option></select><br>
+            <label>Phone</label><br>
+            <input type="text" placeholder="(xxx) xxx-xxxx" required>
+            <select required>
+            <option value="Mobile" selected>Mobile </option>
+            <option value="Landline">Landline</option></select><br>
+          <label>Create Password</label><br>
+           <input type="password" required><br>
+          <label>Confirm Password</label><br>
+          <input type="password" required><br><br>
+          <button type="submit" class="btn">Sign Up</button>
+        </div>
+      
+      </form>
+     </div>
+      <!-- Login-->
+      <div class="column2" >
+      <div class="title">Been here before? Log In! </div>
+      <form>
+        <div class="container">
+          <label>Email</label><br>
+          <input type="text" required><br>
+          <label>Password</label><br>
+          <input type="password" required><br>
+          <i>Password is case sensitive</i>
+          <p>Forget your password?</p>
+          <button type="submit" class="btn">Login</button>
+        </div>
+        </form>
+         <div id="LoginFooter">
+            <span> Prefer not to create a login? </span><span style="color: red;">Continue without logging in.</span>
+         </div>
+   
+      </div>
 
 
-
-<section class="vh-100">
+{{!-- <section class="vh-100">
   <div class="container-fluid">
     <div class="row">
       <div class="col-sm-6 text-black">
@@ -45,7 +106,7 @@
     </div>
   </div>
 </section>
-
+ --}}
 
 
 
