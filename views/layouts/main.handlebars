@@ -8,7 +8,7 @@
   <title>Polished - Appointment Booking System for Nail Salons</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Urbanist:wght@100;200&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
  <link rel="stylesheet"
@@ -18,12 +18,12 @@
 <body>
     <header>
         <nav>
-            <a class="btn m-2" data-bs-toggle="button" id="home-btn">Home</a>
+            <a class="btn m-3" data-bs-toggle="button" id="home-btn">Home</a>
             {{#if logged_in}} <!-- if user is logged in -->
-            <a class="btn m-2" data-bs-toggle="button" id="appt-btn" href="/appointment">appointment</a>
-            <a class="btn m-2" data-bs-toggle="button" id="logout-btn" href="/logout">logout</a> 
+            <a class="btn m-3" data-bs-toggle="button" id="appt-btn" href="/appointment">appointment</a>
+            <a class="btn m-3" data-bs-toggle="button" id="logout-btn" href="/logout">logout</a> 
             {{else}}
-            <a class="btn m-2" data-bs-toggle="button" id="login-btn" href="/login">login</a> 
+            <a class="btn m-3" data-bs-toggle="button" id="login-btn" href="/login">login</a> 
             {{/if}}
         </nav>
     </header> 
