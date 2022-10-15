@@ -1,17 +1,22 @@
 <!-- Our main/landing page -->
 {{!-- Api call to get all of the services from Service model (make fake data to have to do the fetch from this model) --}}
 
-<div class="">
-    <h2>Welcome to Polished</h2>
-    <h1>"The best appointment booking application ever" -Forbes</h1>
+<div class="flex-container">
+    <h2 id='title'class="text-center p-2">Polished</h2>
+    <div id="emoji"class="d-inline"><span>⭐⭐⭐⭐⭐</span></div>
 
+    <h1 id="review"class="text-center fs-4">"The best appointment booking application ever" -Forbes</h1>
+
+    {{#each services as |service| }}
     <ul class="service-list">
-        {{#each services as |service| }}
-            <img src="{{service.image_link}}"> <!-- store links in the db -->
-            <h3>{{service.name}}</h3>
-            <p>{{service.description}}</p>
-        {{/each}}
+        <li>
+        <a href="/service/{{service.id}}" id="image" src={{service.image}}></a>
+        <h3>{{service.name}}</h3>
+        <a id="description"class="">{{service.description}}</a>
+        </li>
     </ul>
+     {{/each}}
+        
 </div>
 
 <script src="/javascript/home.js"></script>

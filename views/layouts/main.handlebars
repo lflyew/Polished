@@ -6,28 +6,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Polished - Appointment Booking System for Nail Salons</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
 </head>
 
 <body>
     <header>
-        {{!-- <nav>
-            <button id="home-button">Home</button>
+        <nav>
+            <a class="btn m-2" data-bs-toggle="button" id="home-btn">Home</a>
             {{#if logged_in}} <!-- if user is logged in -->
-            <a id="apt-btn" href="/appointment">Appointment</a>
-            <a id="lougout-btn" href="/logout">logout</a> 
+            <a class="btn m-2" data-bs-toggle="button" id="appt-btn" href="/appointment">appointment</a>
+            <a class="btn m-2" data-bs-toggle="button" id="logout-btn" href="/logout">logout</a> 
             {{else}}
-            <a id="login-btn" href="/login">login</a> <!-- if user is not logged in THEN links to the login script (which we don't have yet) -->
-        </nav> --}}
-    </header>
+            <a class="btn m-2" data-bs-toggle="button" id="login-btn" href="/login">login</a> 
+            {{/if}}
+        </nav>
+    </header> 
 
     <main>
         {{{ body }}}
     </main>
     <!-- Any scripts wanted to be included in here -->
     <!-- script files put in public/javascripts folder -->
-    <script src=""></script>
+    {{#if logged_in}}
+    <script src="/js/logout.js"></script>
+    {{!-- <script src="/js/appointment.js"></script> --}}
+    {{/if}}
 </body>
 
 </html>
