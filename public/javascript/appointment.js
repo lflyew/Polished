@@ -43,3 +43,11 @@ const addBookingService = function() {
 document
   .querySelector('#serv-tech-add-more-btn')
   .addEventListener('click', addBookingService);
+
+const aptSubmitBtnHandler = function () {
+  console.log('here');
+}
+
+document
+  .querySelector('#appt-submit-btn')
+  .addEventListener('click', aptSubmitBtnHandler);

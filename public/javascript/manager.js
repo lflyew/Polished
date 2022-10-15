@@ -153,9 +153,12 @@ const customerSearchHandler = async function() {
       customerNameDiv.dataset.userId = customer.id;
       customerNameDiv.style.display = "block";
     } else {
-      console.log('Please sign-up for this customer first.');
+      if (confirm("Please register for this customer first!")) {
+        document.location.replace('/signup');
+      } else {
+        document.location.replace('/manager');
+      } 
     }
-
   } else alert('Please input a phone number');
 }
 

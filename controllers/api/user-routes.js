@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
             });
 
             if (customer) res.status(200).json(customer);
-            else res.status(400).json("Not Found");
+            else res.status(404).json("Not Found");
         } catch (err) {
             res.status(400).json(err);
         }
