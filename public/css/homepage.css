@@ -1,5 +1,8 @@
 main {
     background-color: #A5D9D0;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 200px;
 }
 
 #title {
@@ -34,7 +37,6 @@ header {
     background-color: #02443A;
 }
 
-/* Here is where i STRUGGLE WITH THIS STUPID OVERLAY */
 .container {
     position: relative;
     width: 50%;
@@ -50,9 +52,9 @@ header {
 .overlay {
     position: absolute;
     border-radius: 17px;
-    margin: 0;
+    margin-left: 40px;
     padding: 0;
-    top: 0;
+    top: 0.8px;
     bottom: 0;
     left: 0;
     right: 0;
@@ -69,14 +71,17 @@ header {
   }
 
   #description {
-    padding-block: 10px 10px;
     font-size: 10px;
     line-height: 10px;
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 100px;
+    left: 100px;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    text-align: center;
+  }
+
+  .copyright {
+    font-size: 12px;
+    font-family: 'Urbanist', sans-serif;
   }

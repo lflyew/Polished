@@ -36,21 +36,21 @@
     },
     {
         "name": "Spa Pedicure",
-        "description": "This pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning of the dead skin on the heels using softener. Also includes Honey Sugar Scrub Exfoliation for soft and smooth skin, and lotion conditioner for Special Foot Massage Treatment. Ending with Hot Towel wraps and polish of your choice.",
+        "description": "This pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning of the dead heel skin. Also includes Honey Sugar Scrub Exfoliation, and lotion conditioner for a Special Foot Massage Treatment. Ending with Hot Towel wraps and polish of your choice.",
         "price": 39,
         "time_frame": 45,
         "image": "https://media.istockphoto.com/photos/closeup-shot-of-an-unrecognisable-woman-getting-a-foot-treatment-at-a-picture-id1325209102?k=20&m=1325209102&s=612x612&w=0&h=P7q8FScosDbafcrx_Zygarw3cnaQy7BqIRKOMGs2ocE="
     },
     {
         "name": "Allure Pedicure",
-        "description": "This Pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning dead skin on the heels using Callus Remover. Your choice of one of our 4-step formula-free skincare routines: Sea Salt Soak for softening, Sugar Scrub for moisturizing and exfoliating, Mud Masque for cooling and soothing sensation, Hot Stones for Deep Massage Sensation, Lotion Conditioner for an Extra Foot Massage. Ending with Hot Towel wraps and polish of your choice. This pedicure will remove all dry skin, leaving you with soft, smooth, and healthy skin.",
+        "description": "This Pedicure includes nail trimming, shaping, buffing, cuticle grooming, and cleaning dead heel skin. Your choice of skincare routine: Sea Salt Soak, Sugar Scrub, Mud Masque, Hot Stones, or Lotion Conditioner. Ending with Hot Towel wraps and polish of your choice.",
         "price": 49,
         "time_frame": 45,
         "image": "https://media.istockphoto.com/photos/hot-stone-feet-massage-picture-id525953631?k=20&m=525953631&s=612x612&w=0&h=LkMVWt9eQawANvCahhyfq1_FfV1JYhhCeXtQ4UbobT0="
     },
     {
         "name": "Super Deluxe Pedicure",
-        "description": "This Pedicure includes nail trimming, shaping, buffing, cuticle grooming, cleaning the dead skin on the heels using Callus Remover. Also includes our 6 steps skincare treatment: Soak, Clean, Scrub, Foot Mask, Massage Cream, and Natural Herbs Cream. In addition, this pedicure also uses Hot Stones for Deep Massage Sensation with 20 minutes of relaxation while being treated with our Special Foot Massage Treatment, Hot Towel wraps. Ending with Paraffin Treatment and polish of your choice. This pedicure will help dry skin and cracked heels, leaving you with soft and smooth skin with the additional health benefits of Reflexology.",
+        "description": "This Pedicure includes nail trimming, shaping, buffing, cuticle grooming, and cleaning of dead heel skin. Also includes our 6 steps skincare treatment, Hot Stones for Deep Massage Sensation and our Special Foot Massage Treatment, Hot Towel wraps. Ending with Paraffin Treatment and polish of your choice.",
         "price": 59,
         "time_frame": 60, 
         "image": "https://images.beautyanswered.com/slideshow-mobile-small/pedicure.jpg"
