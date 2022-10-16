@@ -123,7 +123,6 @@ const managerBtnHandler = async function(event) {
   await calendarAppoinmentHandler();
   await fetchAllServices();
   await fetchAllTechnicians();
-  event.target.style.display = "none";
 };
 
 document
