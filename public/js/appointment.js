@@ -1,19 +1,24 @@
 const apptFormHandler = async (event) => {
     event.preventDefault(); 
 
-     //making a post to our API 
-     const response = await fetch('/api/appointment', {
-        method: 'POST',
-        //letting the server know that its json data
-        headers: { 'Content-Type': 'application/json' }, 
-      });
-    
-      if (response.ok) {
-        //if the response is successful and user is logged out you take them back to the login page
-        document.location.replace('/');
-      } else {
-        alert('Failed to load appointment page');
-      }
+  const nailTech = document.querySelector('#nail-tech').value.trim(); 
+  const date = document.querySelector('#date').value.trim();
+  const service = document.querySelector('#service-type').value.trim();
+  const timeslot = document.querySelector('#time-slot').value.trim();
+
+  
+   if (nailTech && date && service && timeslot) {
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      body: JSON.stringify({ nailTech, date, service, timeslot }),
+      headers: { 'Content-Type': 'application/json' }, 
+    });
+    if (response.ok) {
+      document.location.replace('/appointment');
+    } else {
+      alert('Failed to load appointment page');
+    }
+   }
 }; 
 document
     .querySelector('#appt-btn')
