@@ -1,8 +1,23 @@
-<button id="manager-btn">manager</button>
-<div class="flex flex-row">
+{{!-- <button class="btn m-3" data-bs-toggle="button" id="manager-btn">manager</button> --}}
+<header>
+    {{!-- {{main.nav-bar}}  --}}
+    <nav>
+            <button class="btn m-3" id="manager-btn">manager</button>
+            {{!-- the below will need to be replaced --}}
+            <a class="btn m-3" id="home-btn">Home</a>
+            {{#if logged_in}} <!-- if user is logged in -->
+            <a class="btn p-2 m-2" id="appt-btn" href="/appointment">appointment</a>
+            <a class="btn m-3" id="logout-btn" href="/logout">logout</a> 
+            {{else}}
+            <a class="btn m-3" id="login-btn" href="/login">login/signup</a> 
+            {{/if}}
+    </nav>
+</header>
+
+<div class="flex flex-row text-center">
     <div id='booking' style="display: none;">
-        <input type="text" id="phone-input" placeholder="123-456-7890">
-        <button type="submit" id="customer-search-btn">Search</button>
+        <input type="text" style="height: 35px;" id="phone-input" placeholder="123-456-7890">
+        <button class="btn p-2 m-2" type="submit" id="customer-search-btn">Search</button>
         <div id="customer-name-div" style="display: none"></div>
         {{> booking-system}}
     </div>

@@ -82,7 +82,7 @@ const fetchAllServices = async function() {
     var services = servData.services;
     for (let i = 0; i <= services.length; i++) {
       const servOpt = document.createElement("option");
-      if (i==0) servOpt.innerHTML = "Please pick a service.";
+      if (i==0) servOpt.innerHTML = "Pick a service";
       else {
         servOpt.innerHTML = services[i-1].name;
         servOpt.value = services[i-1].id;
@@ -104,9 +104,9 @@ const fetchAllTechnicians = async function() {
     const technicians = await response.json();
     for (let i = -1; i <= technicians.length; i++) {
       const techOpt = document.createElement("option");
-      if (i==-1) techOpt.innerHTML = "Please pick a service.";
+      if (i==-1) techOpt.innerHTML = "Pick a technician";
       else if (i==0) {
-        techOpt.innerHTML = "Any technicians";
+        techOpt.innerHTML = "Any technician";
         techOpt.value = 0;
       } else {
         techOpt.innerHTML = technicians[i-1].first_name;
