@@ -88,16 +88,13 @@ const checkAvailableHandler = async function (event) {
     return;
   }
   if (techId !== "0") {
-    try {
       const response = await fetch('/api/appointments/available', {
         method: 'POST',
         body: JSON.stringify({"user_id": techId, "date": date, "time_slot": timeslot, "time_frame": serv.options[serv.selectedIndex].dataset.time}),
         headers: { 'Content-Type': 'application/json' },
       });
       if (response.ok) alert("Available");
-    } catch (err) {
-      alert("Unavailable");
-    }
+      else alert("Unavailable");
   } else alert("Available");
 }
 
