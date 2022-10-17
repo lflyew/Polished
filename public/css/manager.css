@@ -142,7 +142,7 @@ html, body {
 }
 
 /* remove buttons from navbar once you import the partial */
-#customer-search-btn, #manager-btn, #serv-tech-add-more-btn, #appt-submit-btn, #home-btn, #login-btn {
+#customer-search-btn, #manager-btn, #serv-tech-add-more-btn, #appt-submit-btn {
   color: black; 
   background-color: #f7be94;
   font-family: 'Bebas Neue', cursive;
@@ -163,8 +163,3 @@ html, body {
   border-color: #1E252B;
 }
 
-/* this is placeholder until we import nav bar from main.handlebars */
-
-header {
-  background-color: #02443A;
-}
