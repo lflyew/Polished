@@ -3,7 +3,7 @@
     float: left;
     width: 50%;
     padding: 10px;
-    height: 534x; /* Should be removed. Only for demonstration */
+    height: 534x; 
     border-radius: 20px;
     border: 2px solid;
   }
@@ -15,7 +15,7 @@
     float: right;
     width: 45%;
     padding: 10px;
-    height: 450px; /* Should be removed. Only for demonstration */
+    height: 450px;
     border-radius: 20px;
     border: 2px solid; }
   .title{
