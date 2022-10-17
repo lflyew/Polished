@@ -2,11 +2,11 @@ const {
   User, 
   Service, 
   Appointment, 
-  AppointmentService } = require('../models/');
+  Booking } = require('../models/');
 const userData = require('./user_data.json');
 const serviceData = require('./service_data.json');
 const appointmentData = require('./appointment_data.json');
-const apptServData = require('./appt_serv_data.json');
+const bookingData = require('./booking_data.json');
 
 
 const sequelize = require('../config/connection');
@@ -21,7 +21,7 @@ const seedAll = async () => {
   });
   await Service.bulkCreate(serviceData);
   await Appointment.bulkCreate(appointmentData);
-  await AppointmentService.bulkCreate(apptServData);
+  await Booking.bulkCreate(bookingData);
   
   process.exit(0);
 };

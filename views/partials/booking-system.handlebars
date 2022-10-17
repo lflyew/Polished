@@ -1,0 +1,9 @@
+<input type="date" id="appt-day-input">
+<select id="appt-timeslot-select" onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;">
+    <option value="">Please pick time:</option>
+</select>
+<div id="service-tech-div">
+</div>
+<button id="serv-tech-add-more-btn">Add Services</button>
+<button id="appt-submit-btn">Book Appointment</button>
+<script src="/javascript/appointment.js"></script>  

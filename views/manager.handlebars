@@ -1,0 +1,16 @@
+<button id="manager-btn">manager</button>
+<div class="flex flex-row">
+    <div id='booking' style="display: none;">
+        <input type="text" id="phone-input" placeholder="123-456-7890">
+        <button type="submit" id="customer-search-btn">Search</button>
+        <div id="customer-name-div" style="display: none"></div>
+        {{> booking-system}}
+    </div>
+    <div id='calendar' style="display: none;"></div>
+</div>
+<script src="/javascript/manager.js"></script>
+
+<script src="https://unpkg.com/@fullcalendar/core@4.3.1/main.min.js"></script>
+<script src="https://unpkg.com/@fullcalendar/daygrid@4.3.0/main.min.js"></script>
+<script src="https://unpkg.com/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tooltip.js/dist/umd/tooltip.min.js"></script>
