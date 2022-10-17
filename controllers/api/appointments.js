@@ -17,7 +17,13 @@ router.put('/', async (req, res) => {
       date: req.body.date,
       time_slot: req.body.time_slot,
       user_id: req.body.user_id,
+    },
+    {
+      where: {
+        id: req.body.id,
+      },
     }
+    
   );
   return res.json(appData);});
 
