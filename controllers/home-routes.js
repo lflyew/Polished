@@ -1,3 +1,6 @@
+const Appointment = require('../models/Appointment');
+const User = require('../models/User');
+
 const router = require('express').Router();
 
 router.get('/', (req, res) => {
@@ -11,5 +14,9 @@ router.get('/login', (req, res) => {
 router.get('/appointment', (req, res) => {
     res.render('appointment');
 });
+
+router.get('/manager', (req, res) => {
+    res.render('manager');
+})
 
 module.exports = router;
