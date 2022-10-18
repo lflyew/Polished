@@ -19,7 +19,7 @@ router.post('/:user_id', (req, res) => {
 
 
 // update Bookings
-router.put('/:user_id', async (req, res) => {
+router.put('/:user_id/:id', async (req, res) => {
   const appData = await Bookings.update(
     {
       id: req.body.id,
@@ -36,10 +36,11 @@ router.put('/:user_id', async (req, res) => {
 
 
 // delete Bookings
-router.delete('/:user_id', async (req, res) => {
+router.delete('/:user_id/:id', async (req, res) => {
   const appData = await Bookings.destroy({
     where: {
         user_id: req.params.user_id,
+        id: req.params.id,
     },
   });
 
