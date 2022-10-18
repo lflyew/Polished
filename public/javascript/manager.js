@@ -39,6 +39,7 @@ const managerBtnHandler = async function(event) {
       initialView: 'dayGridMonth',
 
       eventRender: function(info) {
+        console.log(info);
         var tooltip = new Tooltip(info.el, {
           title: info.event.extendedProps.description,
           placement: 'top',

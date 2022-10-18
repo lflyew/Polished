@@ -1,2 +1,38 @@
-<!-- Our main/landing page -->
-<h1>Home Page</h1>
+<div class="flex-container">
+    <h2 id="title"class="text-center p-4">Polished</h2>
+        <div class="star text-center">
+        <img id="star" src="https://www.freeiconspng.com/thumbs/white-star-icon/white-star-icon-10.png" alt="star">
+        <img id="star" src="https://www.freeiconspng.com/thumbs/white-star-icon/white-star-icon-10.png" alt="star">
+        <img id="star" src="https://www.freeiconspng.com/thumbs/white-star-icon/white-star-icon-10.png" alt="star">
+        <img id="star" src="https://www.freeiconspng.com/thumbs/white-star-icon/white-star-icon-10.png" alt="star">
+        <img id="star" src="https://www.freeiconspng.com/thumbs/white-star-icon/white-star-icon-10.png" alt="star">
+        </div>
+    <h1 id="review"class="text-center fs-4 p-3">"The best appointment booking application ever" -Forbes</h1>
+    <hr>
+
+    <h1 id="service"class="text-center fs-2 p-3">Services</h1>
+
+    <div class="d-flex flex-wrap justify-content-center">
+        {{#each services as |service| }}
+        <div class="row">
+        <ul class="container col text-center">
+            <li class="col">
+                <a href="/service/{{service.id}}">
+                <img class="border border-dark m-4 " id="image" src={{service.image_link}}>
+                </a>
+            <div class="overlay border border-dark">
+                <a id="description">{{service.description}}</a>
+            </div>
+            </li>
+
+            <li>
+                <h3 id="service-name">{{service.name}}</h3>
+            </li>
+        </ul>
+        </div>
+         {{/each}}
+    </div>
+        
+</div>
+
+<script src="/javascript/home.js"></script>
