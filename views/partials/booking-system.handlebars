@@ -1,0 +1,22 @@
+{{!-- Olivia addition is the div class --}}
+<div class="m-2"> 
+    <input type="date" id="appt-day-input">
+    <br>
+        <select id="appt-timeslot-select" onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;">
+            <p>
+            <div>
+                <option value="">Pick a time</option>
+            </div>
+            </p>
+        </select>
+    <p>
+        <div class="p-3">
+            <button class="btn m-3" id="serv-tech-add-more-btn">Add services</button>
+            <div id="service-tech-div"></div>
+        </div>
+    </p>
+    <p>
+        <button class="btn m-3" data-bs-toggle="button" id="appt-submit-btn">Book Appointment</button>
+    </p>
+<script src="/javascript/appointment.js"></script>  
+</div>
