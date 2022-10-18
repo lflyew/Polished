@@ -60,12 +60,6 @@ const managerBtnHandler = async function(event) {
   } 
 };
 
-const isPhoneNumber = function(str) {
-  const num = str.replace(/\D/g, '');
-  if (num.length != 10) return false;
-  return num;
-}
-
 const customerSearchHandler = async function() {
   const phoneInput = document.getElementById('phone-input');
   const customerNameDiv = document.getElementById('customer-name-div');
@@ -96,6 +90,4 @@ document
   .querySelector('#customer-search-btn')
   .addEventListener('click', customerSearchHandler);
 
-document
-  .querySelector('#manager-btn')
-  .addEventListener('click', managerBtnHandler);
+document.addEventListener("DOMContentLoaded", managerBtnHandler);

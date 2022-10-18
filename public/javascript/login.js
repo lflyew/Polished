@@ -1,15 +1,11 @@
 const loginFormHandler = async (event) => {
-    event.preventDefault();
-   // getting values from our form fields (the text boxes)
-   const email = document.querySelector('#email-login').value.trim(); //removed empty space in front or on the end of hte string
-   const password = document.querySelector('#password-login').value.trim();
-
-  
-   if (user && password) {
-    //post request to our api to login 
-    const response = await fetch('/api/login', {
+  event.preventDefault();
+  const phone = isPhoneNumber(document.querySelector('#authentication-login-phone').value);
+  const password = document.querySelector('#authentication-login-password').value.trim();  
+  if (phone && password) {
+    const response = await fetch('/login', {
       method: 'POST',
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ phone, password }),
       //letting the API know that I'm sending it json data 
       headers: { 'Content-Type': 'application/json' }, 
     });
@@ -18,11 +14,9 @@ const loginFormHandler = async (event) => {
     } else {
       alert('Failed to log in');
     }
-   }
-  
-  };
-  
+  } else alert("Please input your phone number and password.");
+};
 
-  document
-    .querySelector('#login-btn')
-    .addEventListener('submit', loginFormHandler);
+document
+  .querySelector('#authentication-login-submit')
+  .addEventListener('click', loginFormHandler);

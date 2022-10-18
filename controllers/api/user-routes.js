@@ -2,7 +2,6 @@ const router = require('express').Router();
 const User = require('../../models/User');
 const Booking = require('../../models/Booking');
 const Appointment = require('../../models/Appointment');
-const { where } = require('sequelize');
 
 router.get('/', async (req, res) => {
     var whereFinder = {};

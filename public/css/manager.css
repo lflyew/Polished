@@ -6,15 +6,6 @@ html, body {
   background-color: #A5D9D0;
 }
 
-.flex {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.flex-row {
-  flex-direction: row;
-}
-
 #booking {
   border-width: 1px;
   border-style: solid;
@@ -143,7 +134,7 @@ html, body {
 }
 
 /* remove buttons from navbar once you import the partial */
-#customer-search-btn, #manager-btn, #serv-tech-add-more-btn, #appt-submit-btn {
+#customer-search-btn, #serv-tech-add-more-btn, #appt-submit-btn {
   color: black; 
   background-color: #f7be94;
   font-family: 'Bebas Neue', cursive;
@@ -151,7 +142,7 @@ html, body {
   border-width: 1px;
   border-style: solid;
   border-color: #1E252B;
-  margin: 5px; 
+  margin: 5px;
 }
 
 #customer-search-btn, #serv-tech-add-more-btn, #appt-submit-btn, .fc-today-button {

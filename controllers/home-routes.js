@@ -3,6 +3,7 @@ const User = require('../models/User');
 
 const router = require('express').Router();
 const Service = require('../models/Service');
+const { withAuth, isCustomer, isManager }  = require('../utils/route-helpers');
 
 router.get('/', async (req, res) => {
     try {
@@ -29,12 +30,20 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/appointment', (req, res) => {
-    res.render('appointment');
+router.get('/appointment', withAuth, isCustomer, (req, res) => {
+    res.render('appointment', {
+        user_id: req.session.user_id,
+        user_role: req.session.user_role,
+        logged_in: req.session.logged_in,
+    });
 });
 
-router.get('/manager', (req, res) => {
-    res.render('manager');
+router.get('/manager', withAuth, isManager, (req, res) => {
+    res.render('manager', {
+        user_id: req.session.user_id,
+        user_role: req.session.user_role,
+        logged_in: req.session.logged_in,
+    });
 })
 
 module.exports = router;
