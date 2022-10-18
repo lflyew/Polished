@@ -26,6 +26,10 @@ Service.init(
         time_frame: {
             type: DataTypes.INTEGER,
             allowNull: false,
+        },
+        image_link: {
+            type: DataTypes.STRING,
+            allowNull: true,
         }
     },
     {
