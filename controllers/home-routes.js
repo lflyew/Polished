@@ -7,14 +7,14 @@ const Service = require('../models/Service');
 router.get('/', async (req, res) => {
     try {
         const servData = await Service.findAll();
-        // im faking image link NOW
         var services = servData.map((serv) => serv.get({ plain: true}));
-        services.map((serv) => {
-            serv.image_link = "https://picsum.photos/200";
-        });
-        if (!services) res.status(404).json({"messange":"there is no services"});
+        if (!services) res.status(404).json({"messange": "there is no services"});
         else {
-            res.render('home', {services: services});
+            res.render('home', {
+                services: services,
+                user_role: req.session.user_role,
+                logged_in: req.session.logged_in,
+            });
         }
     } catch(err) {
         res.status(400).json(err);
@@ -22,6 +22,10 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+      res.redirect('/');
+      return;
+    }
     res.render('login');
 });
 
