@@ -30,6 +30,7 @@ router.put('/:user_id', async (req, res) => {
     {
       where: {
         user_id: req.params.user_id,
+        id: req.params.id
       }});
   return res.json(appData);});
 
