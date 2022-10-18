@@ -3,7 +3,7 @@ const { User } = require('../models');
 
 router.post('/login', async (req, res) => {
     try {
-        const userData = await User.findOne({ where: { email: req.body.email } });
+        const userData = await User.findOne({ where: { phone: req.body.phone } });
         if (!userData) {
             res
                 .status(400)
@@ -19,7 +19,7 @@ router.post('/login', async (req, res) => {
         } else
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.role = userData.role;
+            req.session.user_role = userData.role;
             req.session.logged_in = true;
 
             res.status(200).json({ user: userData, message: 'You are now logged in!' });

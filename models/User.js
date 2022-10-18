@@ -36,6 +36,7 @@ User.init(
         phone: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true,
         },
         password: {
             type: DataTypes.STRING,
@@ -53,6 +54,11 @@ User.init(
         hooks: {
             //hashing the user pw before inserting it into the database
             beforeCreate: async (newUserData) => {
+                if (!(newUserData.role === "customer" || 
+                        newUserData.role === "manager" || 
+                        newUserData.role === "technician")) {
+                    throw Error("Role is not defined.")
+                }
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
                 return newUserData;
             },
