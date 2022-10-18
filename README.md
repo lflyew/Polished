@@ -1,13 +1,13 @@
 # Polished Appointment Booking Application
 
 ## Description 
-A handy tool for managers and technicians to keep track of upcoming appointments. Clients can book their appointment directly through the application but signing up through the login page, once in the Polished system clients can select their favorite technician, preferred appointment time (based on availability) through the built in calander. When the client has finished their appointment a SMS message will be sent from the application to rate the customer's overall satisfaction.
+A handy tool for managers and technicians to keep track of upcoming appointments. Clients can book their appointment directly through the application by signing up through the login page, once in the Polished system clients can select their favorite technician, preferred appointment time (based on availability) through the built in calander. When the client has finished their appointment a SMS message will be sent from the application to rate the customer's overall satisfaction.
 
   ## Table of Contents
   - [Installation](#installation)
   - [Features](#features)
   - [Usage](#usage)
-  - [License](#license)
+  - [Built With](#built with)
   - [Contributing](#contributing)
   - [Tests](#tests)
   - [Questions](#questions)
@@ -26,7 +26,7 @@ A handy tool for managers and technicians to keep track of upcoming appointments
 Online booking options in real time
 Intelligent calendar to manage appointments easier
 Automated SMS messaging to clients 
-Client 
+Smart phone/ Tablet compatibility
 ```
   
 ## Usage 
@@ -42,7 +42,24 @@ Exit the host from the command line by entering control + c
 ```
 
 
-##  License
+
+## Built With
+```
+        "bcrypt": "^5.0.0",
+        "connect-session-sequelize": "^7.0.4",
+        "dotenv": "^8.2.0",
+        "express": "^4.17.1",
+        "express-handlebars": "^5.2.0",
+        "express-session": "^1.17.1",
+        "mysql2": "^2.2.5",
+        "sequelize": "^6.3.5",
+        "fullcalendar": "^5.11.3"
+        "twilio"
+
+
+
+
+```
 
 ## Contributing
 
