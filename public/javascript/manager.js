@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 var index = 0;
 var servInput;
 var techInput;
@@ -11,15 +12,26 @@ const getFormattedDate = (dateStr, timeSlot) => {
   day = day.length > 1 ? day : '0' + day;
 
   // open at 9:30 closed at 7:30
+=======
+const getFormattedDate = (dateStr, timeSlot) => {
+   // open at 9:30 closed at 7:30
+>>>>>>> 845e61a35741fb20dad8a15ea54157c0642d5c99
   var minute = (timeSlot+1)%4*15;
   var hour = (timeSlot+1-(timeSlot+1)%4)/4+9;
   if (minute<10) minute = "0" + minute;
   if (hour<10) hour = "0" + hour;
+<<<<<<< HEAD
 
   return year + '-' + month + '-' + day + "T" + hour + ":" + minute + ":00";
 }
 
 const calendarAppoinmentHandler = async function() {
+=======
+  return dateStr.toString().split('T')[0] + "T" + hour + ":" + minute + ":00";
+}
+
+const managerBtnHandler = async function(event) {
+>>>>>>> 845e61a35741fb20dad8a15ea54157c0642d5c99
   var bookingDiv = document.getElementById('booking');
   var calendarEl = document.getElementById('calendar');
   if (calendarEl.style.display == "block") return;
@@ -69,6 +81,7 @@ const calendarAppoinmentHandler = async function() {
   } else {
     alert('Failed ON server');
   } 
+<<<<<<< HEAD
 }
 
 const fetchAllServices = async function() {
@@ -130,6 +143,10 @@ document
   .querySelector('#manager-btn')
   .addEventListener('click', managerBtnHandler);
 
+=======
+};
+
+>>>>>>> 845e61a35741fb20dad8a15ea54157c0642d5c99
 const isPhoneNumber = function(str) {
   const num = str.replace(/\D/g, '');
   if (num.length != 10) return false;
@@ -142,12 +159,17 @@ const customerSearchHandler = async function() {
   var phoneNumber = isPhoneNumber(phoneInput.value);
   if (phoneNumber) {
     // get all appointments
+<<<<<<< HEAD
     const response = await fetch('/api/users?phone='+phoneNumber, {
+=======
+    const response = await fetch('/api/users?role=customer&phone='+phoneNumber, {
+>>>>>>> 845e61a35741fb20dad8a15ea54157c0642d5c99
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     });
     
     if (response.ok) {
+<<<<<<< HEAD
       const customer = await response.json();
       customerNameDiv.innerHTML = customer.first_name + " " + customer.last_name;
       customerNameDiv.dataset.userId = customer.id;
@@ -156,9 +178,29 @@ const customerSearchHandler = async function() {
       console.log('Please sign-up for this customer first.');
     }
 
+=======
+      const customers = await response.json();
+      customerNameDiv.innerHTML = customers[0].first_name + " " + customers[0].last_name;
+      customerNameDiv.dataset.userId = customers[0].id;
+      customerNameDiv.style.display = "block";
+    } else {
+      if (confirm("Please register for this customer first!")) {
+        document.location.replace('/signup');
+      } else {
+        document.location.replace('/manager');
+      } 
+    }
+>>>>>>> 845e61a35741fb20dad8a15ea54157c0642d5c99
   } else alert('Please input a phone number');
 }
 
 document
   .querySelector('#customer-search-btn')
   .addEventListener('click', customerSearchHandler);
+<<<<<<< HEAD
+=======
+
+document
+  .querySelector('#manager-btn')
+  .addEventListener('click', managerBtnHandler);
+>>>>>>> 845e61a35741fb20dad8a15ea54157c0642d5c99

@@ -29,7 +29,18 @@ Automated SMS messaging to clients
 Client 
 ```
   
-## Usage
+## Usage 
+```
+Update the dotenv file to reflect the example 
+Run the server from the command line by typing node.server.js or npm start
+Open the local host: 3001 in your browser to the homepage, click the login to be routed to sign-up or login, where you will be routed to the appointment's page. 
+Exit the host from the command line by entering control + c
+
+
+
+
+```
+
 
 ##  License
 
@@ -38,4 +49,6 @@ Client
 ## Tests
 
 ## Questions
-If you have any questions about the repo, open an issue or contact me directly at odthientho@gmail.com. You can find more of my works at [odthientho](https://github.com/odthientho/)
+If you have any questions about the repo, open an issue or contact me directly at odthientho@gmail.com. You can find more our projects at [odthientho](https://github.com/odthientho/), 
+[ndubuisiazi](https://github.com/ndubuisiazi), [oliviaconley](https://github.com/oliviaconley),
+[lflyew](https://github.com/lflyew), [rgonsahn](https://github.com/rgonsahn)
