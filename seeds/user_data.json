@@ -2,7 +2,7 @@
     {
         "email": "manager@gmail.com",
         "first_name": "manager",
-        "phone": "git ",
+        "phone": "7145897485",
         "password": "Abc@1234",
         "role": "manager"
     },
@@ -10,7 +10,7 @@
         "email": "julia@gmail.com",
         "first_name": "Julia",
         "last_name": "Brown",
-        "phone": "0000000001",
+        "phone": "7145897485",
         "password": "JuliaBrown",
         "role": "customer"
     },

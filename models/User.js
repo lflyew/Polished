@@ -53,9 +53,9 @@ User.init(
         hooks: {
             //hashing the user pw before inserting it into the database
             beforeCreate: async (newUserData) => {
-                if (!(req.body.role === "customer" || 
-                        req.body.role === "manager" || 
-                        req.body.role === "technician")) {
+                if (!(newUserData.role === "customer" || 
+                        newUserData.role === "manager" || 
+                        newUserData.role === "technician")) {
                     throw Error("Role is not defined.")
                 }
                 newUserData.password = await bcrypt.hash(newUserData.password, 10);
