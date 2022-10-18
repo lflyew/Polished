@@ -1,6 +1,15 @@
 const router = require('express').Router();
 const Bookings = require('../../models/Appointment_service')
 
+router.get('/:user_id', async (req, res) => {
+    const bookingsData = await Bookings.findAll(
+          {where: {
+            user_id: req.params.user_id
+            }}
+    )
+    return res.json(bookingsData);});
+  
+
 // new Bookings
 
 router.post('/:user_id', (req, res) => {
@@ -20,7 +29,7 @@ router.put('/:user_id', async (req, res) => {
     },
     {
       where: {
-        id: req.body.id,
+        user_id: req.params.user_id,
       }});
   return res.json(appData);});
 
@@ -29,7 +38,7 @@ router.put('/:user_id', async (req, res) => {
 router.delete('/:user_id', async (req, res) => {
   const appData = await Bookings.destroy({
     where: {
-      user_id: req.body.user_id,
+        user_id: req.params.user_id,
     },
   });
 
