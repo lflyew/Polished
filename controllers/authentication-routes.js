@@ -50,13 +50,7 @@ router.post('/signup', async (req, res) => {
             password: req.body.password,
             role: req.body.role,
           });
-          req.session.save(() => {
-            req.session.user_id = userData.id;
-            req.session.role = userData.role;
-            req.session.logged_in = true;
-  
-              res.json({ user: userData, message: 'You are now logged in!' });
-          });
+        res.status(200).json({ user: userData, message: 'New account just created.' });
     } catch (err) {
         res.status(400).json(err);
     }

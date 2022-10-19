@@ -170,7 +170,7 @@ const aptSubmitBtnHandler = async function () {
       body: JSON.stringify({"data": bookingData}),
       headers: { 'Content-Type': 'application/json' },
     });
-    if (response.ok) document.location.replace("/manager");
+    if (response.ok) document.location.reload();
   } catch (err) {
     alert(err);
   }
