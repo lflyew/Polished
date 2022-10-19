@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 const apptTimeslotSelectHandler = function() {
   let apptTimeslotSelect = document.querySelector('#appt-timeslot-select');
   let timeslotArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39];
@@ -21,83 +19,10 @@ const apptTimeslotSelectHandler = function() {
 
 apptTimeslotSelectHandler();
 
->>>>>>> main
 var index = 0;
 var servInput;
 var techInput;
 
-<<<<<<< HEAD
-const getFormattedDate = (dateStr, timeSlot) => {
-  const date = new Date(dateStr);
-  var year = date.getFullYear();
-  var month = (1 + date.getMonth()).toString();
-  month = month.length > 1 ? month : '0' + month;
-  var day = date.getDate().toString();
-  day = day.length > 1 ? day : '0' + day;
-
-  // open at 9:30 closed at 7:30
-  var minute = (timeSlot+1)%4*15;
-  var hour = (timeSlot+1-(timeSlot+1)%4)/4+9;
-  if (minute<10) minute = "0" + minute;
-  if (hour<10) hour = "0" + hour;
-
-  return year + '-' + month + '-' + day + "T" + hour + ":" + minute + ":00";
-}
-
-const calendarAppoinmentHandler = async function() {
-  var bookingDiv = document.getElementById('booking');
-  var calendarEl = document.getElementById('calendar');
-  if (calendarEl.style.display == "block") return;
-  // get all appointments
-  const response = await fetch('/api/appointments', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' },
-  });
-
-  // if found:
-  if (response.ok) {
-    // array of appointents 
-    var appts = [];
-
-    // converting data received to formated array according to FullCalendar
-    const apptData = await response.json();
-    const appointments = apptData.appointments;
-    appointments.forEach(appt => {
-      appts.push({
-        "title" : appt.user.first_name + " " + appt.user.last_name,
-        "start" : getFormattedDate(appt.date, appt.time_slot),
-        "description" : appt.user.email + "\nPhone: " + appt.user.phone,
-      });
-    });
-    
-    // get calendar div and render appt datas into
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      plugins: [ 'dayGrid' ],
-      initialView: 'dayGridMonth',
-
-      eventRender: function(info) {
-        var tooltip = new Tooltip(info.el, {
-          title: info.event.extendedProps.description,
-          placement: 'top',
-          trigger: 'hover',
-          container: 'body'
-        });
-      },
-      events: appts
-    });
-
-    calendarEl.style.display = "block";
-    bookingDiv.style.display = "block";
-    calendar.render();
-  
-  // if not found anymore or fail
-  } else {
-    alert('Failed ON server');
-  } 
-}
-
-=======
->>>>>>> main
 const fetchAllServices = async function() {
   servInput = document.createElement("select");
   const response = await fetch('/api/services', {
@@ -109,18 +34,12 @@ const fetchAllServices = async function() {
     var services = servData.services;
     for (let i = 0; i <= services.length; i++) {
       const servOpt = document.createElement("option");
-<<<<<<< HEAD
-      if (i==0) servOpt.innerHTML = "Please pick a service.";
-      else {
-        servOpt.innerHTML = services[i-1].name;
-=======
       if (i==0) {
-        servOpt.innerHTML = "Please pick a service.";
+        servOpt.innerHTML = "Service ?";
         servOpt.value = -1;
       } else {
         servOpt.innerHTML = services[i-1].name;
         servOpt.dataset.time = services[i-1].time_frame/15;
->>>>>>> main
         servOpt.value = services[i-1].id;
       }
       servInput.append(servOpt);
@@ -140,15 +59,10 @@ const fetchAllTechnicians = async function() {
     const technicians = await response.json();
     for (let i = -1; i <= technicians.length; i++) {
       const techOpt = document.createElement("option");
-<<<<<<< HEAD
-      if (i==-1) techOpt.innerHTML = "Please pick a service.";
-      else if (i==0) {
-=======
       if (i==-1) {
-        techOpt.innerHTML = "Please pick a technician.";
+        techOpt.innerHTML = "Technician ?";
         techOpt.value = -1;
       } else if (i==0) {
->>>>>>> main
         techOpt.innerHTML = "Any technicians";
         techOpt.value = 0;
       } else {
@@ -162,45 +76,9 @@ const fetchAllTechnicians = async function() {
   }
 }
 
-<<<<<<< HEAD
-const apptTimeslotSelectHandler = function() {
-  let apptTimeslotSelect = document.querySelector('#appt-timeslot-select');
-  let timeslotArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39];
-  timeslotArray = timeslotArray.map(timeslot => {
-    let minute = (timeslot+1)%4*15;
-    let hour = (timeslot+1-(timeslot+1)%4)/4+9;
-    if (minute<10) minute = "0" + minute;
-    if (hour<10) hour = "0" + hour;
-    return hour + ":" + minute;
-  });
-  for (let index = 1; index <= timeslotArray.length; index++) {
-    let timeslotOption = document.createElement("option");
-    if (index < 4) {
-      timeslotOption.disabled = true;
-      timeslotOption.innerHTML = timeslotArray[index-1] + " (Not Available)";
-    } else {
-      timeslotOption.disabled = false;
-      timeslotOption.innerHTML = timeslotArray[index-1];
-    }
-    timeslotOption.value = index;
-    apptTimeslotSelect.append(timeslotOption);
-  }
-}
-
-apptTimeslotSelectHandler();
-fetchAllServices();
-fetchAllTechnicians();
-
-const addBookingService = async function() {
-  const servTechDiv = document.getElementById('service-tech-div');
-
-  index++;
-=======
 const checkAvailableHandler = async function (event) {
-  var temp = event.target.id.split("-");
-  var id = temp[temp.length-2];
-  var serv = document.getElementById("serv-" + id + "-input");
-  var techId = document.getElementById("tech-" + id + "-input").value;
+  var serv = event.currentTarget.parentNode.children[0];
+  var techId = event.currentTarget.parentNode.children[1].value;
   var date = document.getElementById("appt-day-input").value;
   var timeslot = document.getElementById("appt-timeslot-select").value;
   if (techId < 0 || !date || !timeslot || !serv.value) {
@@ -226,38 +104,33 @@ const addBookingService = async function() {
 
   index++;
 
->>>>>>> main
   var servInputTemp = document.createElement("select"); 
   servInputTemp.innerHTML = servInput.innerHTML;
-  servInputTemp.id = "serv-" + index + "-input";
+  servInputTemp.className = "serv-input";
 
   var techInputTemp = document.createElement("select");
   techInputTemp.innerHTML = techInput.innerHTML;
-  techInputTemp.id = "tech-" + index + "-input";
-<<<<<<< HEAD
-
-  servTechDiv.append(servInputTemp);
-  servTechDiv.append(techInputTemp);
-=======
+  techInputTemp.className = "tech-input";
   
   var checkAvailableBtn = document.createElement("button");
   checkAvailableBtn.innerHTML = "Check Available";
-  checkAvailableBtn.id = "check-available-"+ index +"-btn";
-  checkAvailableBtn.className = "checkavailablebtn";
+  checkAvailableBtn.className = "check-available-btn";
 
   checkAvailableBtn.addEventListener("click", checkAvailableHandler);
 
-  servTechDiv.append(servInputTemp);
-  servTechDiv.append(techInputTemp);
-  servTechDiv.append(checkAvailableBtn);
->>>>>>> main
+  const servtechdivtemp = document.createElement("div");
+  servtechdivtemp.id = "appt-serv-tech-" + index;
+  servtechdivtemp.className = "appt-serv-tech";
+
+  servtechdivtemp.append(servInputTemp);
+  servtechdivtemp.append(techInputTemp);
+  servtechdivtemp.append(checkAvailableBtn);
+
+  servTechDiv.append(servtechdivtemp);
 }
 
 document
   .querySelector('#serv-tech-add-more-btn')
-<<<<<<< HEAD
-  .addEventListener('click', addBookingService);
-=======
   .addEventListener('click', addBookingService);
 
 const aptSubmitBtnHandler = async function () {
@@ -265,7 +138,6 @@ const aptSubmitBtnHandler = async function () {
   var timeslot = document.getElementById("appt-timeslot-select").value;
   var userId = document.getElementById("customer-name-div").dataset.userId;
   var apptId;
-
   try {
     var response = await fetch('/api/appointments/', {
       method: 'POST',
@@ -281,11 +153,11 @@ const aptSubmitBtnHandler = async function () {
   }
 
   var servTechDiv = document.getElementById("service-tech-div");
-  var totalServices = (servTechDiv.children.length-servTechDiv.children.length%3)/3;
+  var totalServices = servTechDiv.children.length;
   var bookingData = [];
   for (let i=1; i<=totalServices; i++) {
-    let servId = document.getElementById("serv-"+i+"-input").value;
-    let techId = document.getElementById("tech-"+i+"-input").value;
+    let servId = servTechDiv.children[i-1].children[0].value;
+    let techId = servTechDiv.children[i-1].children[1].value;
     if (servId > 0) {
       if (techId == 0) bookingData.push({"appointment_id": apptId, "service_id": servId });
       else if (techId > 0) bookingData.push({"appointment_id": apptId, "service_id": servId, "user_id": techId});
@@ -307,4 +179,3 @@ const aptSubmitBtnHandler = async function () {
 document
   .querySelector('#appt-submit-btn')
   .addEventListener('click', aptSubmitBtnHandler);
->>>>>>> main

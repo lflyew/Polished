@@ -1,1 +1,22 @@
-{{> booking-system}}
+<div class="header-main">
+    <a class="main-logo">
+        <img src="images/logo.png">
+    </a>
+</div>
+<div id="customer-name-div" data-user-id={{user.id}}>{{user.first_name}} {{user.last_name}}</div>
+<hr>
+<div class="flex-container flex-row">
+    {{> booking-system}}
+    <ul class="appointment-customer-history">
+        <div class="appointment-title">Your Appointments</div>
+        <div class="each-appointment-history">
+        {{#each user.appointments as | appt |}}
+            <li class="appointment-customer-li">
+                <p data-date={{appt.date}} data-time-slot={{appt.time_slot}}>{{appt.date}} at {{getFormattedTimeslot appt.time_slot}}</p>
+                <button>edit</button>
+                <button>delete</button>
+            </li>
+        {{/each}}
+        </div>
+    </ul>
+</div>

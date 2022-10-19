@@ -12,7 +12,7 @@ Appointment.init(
             autoIncrement: true,
         },
         date: {
-            type: DataTypes.DATE,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         time_slot: {

@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const Service = require('../../models/Service');
+const { withAuth, isCustomer, isManager }  = require('../../utils/route-helpers');
 
 router.get('/', async (req, res) => {
     try {

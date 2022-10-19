@@ -1,22 +1,21 @@
-{{!-- Olivia addition is the div class --}}
-<div class="m-2"> 
-    <input type="date" id="appt-day-input">
-    <br>
-        <select id="appt-timeslot-select" onmousedown="if(this.options.length>8){this.size=8;}"  onchange='this.size=0;' onblur="this.size=0;">
-            <p>
-            <div>
+<div class="appointment-booking">
+    <div class="appointment-title" >To Book Appointment</div>
+    <div class="appointment-booking-form">
+        <div>
+            <label>Date:</label>
+            <input class="date-input" type="date" id="appt-day-input">
+            <select class="time-input" id="appt-timeslot-select">
                 <option value="">Pick a time</option>
-            </div>
-            </p>
-        </select>
-    <p>
-        <div class="p-3">
-            <button class="btn m-3" id="serv-tech-add-more-btn">Add services</button>
-            <div id="service-tech-div"></div>
+            </select>
         </div>
-    </p>
-    <p>
-        <button class="btn m-3" data-bs-toggle="button" id="appt-submit-btn">Book Appointment</button>
-    </p>
-<script src="/javascript/appointment.js"></script>  
+        <div>
+            <label>Pick A Service, a Technician and check Availability:</label>
+            <div id="service-tech-div"></div>
+            <button id="serv-tech-add-more-btn">Add services</button>
+        </div>
+        <div class="appt-submit-div">
+            <button id="appt-submit-btn">Book Appointment</button>
+        </div>
+    </div>
 </div>
+<script src="/javascript/appointment.js"></script>  
