@@ -63,6 +63,8 @@ Exit the host from the command line by entering control + c
 ```
 
 ## Contributing
+Follow the repo link below and submit a pull request. Contributions to the development of this application are welcome. 
+[lflyew](https://github.com/lflyew/Polished) 
 
 ## Tests 
 Twilio-sending trial messages to verified phone numbers 
