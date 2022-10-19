@@ -1,6 +1,6 @@
 .authentication-column {
   width: 75%;
-  margin: 0 20px;
+  margin: 0 auto;
   margin-bottom: 50px;
   border-radius: 20px;
 }
@@ -43,6 +43,8 @@
 }
 
 .authentication-input button {
+  cursor: pointer;
+
   font-family: 'Bebas Neue', cursive;
   font-size: 20px;
   color: black;

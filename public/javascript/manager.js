@@ -1,16 +1,5 @@
-const getFormattedDate = (dateStr, timeSlot) => {
-   // open at 9:30 closed at 7:30
-  var minute = (timeSlot+1)%4*15;
-  var hour = (timeSlot+1-(timeSlot+1)%4)/4+9;
-  if (minute<10) minute = "0" + minute;
-  if (hour<10) hour = "0" + hour;
-  return dateStr.toString().split('T')[0] + "T" + hour + ":" + minute + ":00";
-}
-
 const managerBtnHandler = async function(event) {
-  var bookingDiv = document.getElementById('booking');
   var calendarEl = document.getElementById('calendar');
-  if (calendarEl.style.display == "block") return;
   // get all appointments
   const response = await fetch('/api/appointments', {
     method: 'GET',
@@ -39,7 +28,6 @@ const managerBtnHandler = async function(event) {
       initialView: 'dayGridMonth',
 
       eventRender: function(info) {
-        console.log(info);
         var tooltip = new Tooltip(info.el, {
           title: info.event.extendedProps.description,
           placement: 'top',
@@ -50,8 +38,6 @@ const managerBtnHandler = async function(event) {
       events: appts
     });
 
-    calendarEl.style.display = "block";
-    bookingDiv.style.display = "block";
     calendar.render();
   
   // if not found anymore or fail
@@ -73,7 +59,7 @@ const customerSearchHandler = async function() {
     
     if (response.ok) {
       const customers = await response.json();
-      customerNameDiv.innerHTML = customers[0].first_name + " " + customers[0].last_name;
+      customerNameDiv.innerHTML = "<label>Customer:</label>  " + customers[0].first_name + " " + customers[0].last_name;
       customerNameDiv.dataset.userId = customers[0].id;
       customerNameDiv.style.display = "block";
     } else {

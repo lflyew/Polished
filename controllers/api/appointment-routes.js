@@ -2,9 +2,10 @@ const router = require('express').Router();
 const Appointment = require('../../models/Appointment');
 const User = require('../../models/User');
 const Booking = require('../../models/Booking');
-const { Op } = require("sequelize");
+const { withAuth, isCustomer, isManager }  = require('../../utils/route-helpers');
+const { Op } = require('sequelize');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, isManager, async (req, res) => {
     try {
         const appointmentData = await Appointment.findAll({ include: User });
         var appointments = appointmentData.map((appt) => appt.get({ plain: true }));
@@ -19,7 +20,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.post("/available", async(req, res) => {
+router.post("/available", withAuth, async(req, res) => {
     try {
         const apptData = await Appointment.findAll({
             raw: true,
@@ -44,10 +45,10 @@ router.post("/available", async(req, res) => {
     }
 });
 
-router.post("/", async(req, res) => {
+router.post("/", withAuth, async(req, res) => {
     try {
         var userId = req.body.user_id;
-        if (!userId) userId = req.session.user_id
+        if (userId == -1) userId = req.session.user_id;
         const apptData = await Appointment.create({
                 date: req.body.date,
                 time_slot: req.body.time_slot,

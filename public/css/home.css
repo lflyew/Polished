@@ -4,6 +4,7 @@ body {
 
 main {
     background-color: #A5D9D0;
+    min-height: 100vh;
 }
 
 header {

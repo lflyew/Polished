@@ -35,7 +35,7 @@ const fetchAllServices = async function() {
     for (let i = 0; i <= services.length; i++) {
       const servOpt = document.createElement("option");
       if (i==0) {
-        servOpt.innerHTML = "Please pick a service.";
+        servOpt.innerHTML = "Service ?";
         servOpt.value = -1;
       } else {
         servOpt.innerHTML = services[i-1].name;
@@ -60,7 +60,7 @@ const fetchAllTechnicians = async function() {
     for (let i = -1; i <= technicians.length; i++) {
       const techOpt = document.createElement("option");
       if (i==-1) {
-        techOpt.innerHTML = "Please pick a technician.";
+        techOpt.innerHTML = "Technician ?";
         techOpt.value = -1;
       } else if (i==0) {
         techOpt.innerHTML = "Any technicians";
@@ -77,10 +77,8 @@ const fetchAllTechnicians = async function() {
 }
 
 const checkAvailableHandler = async function (event) {
-  var temp = event.target.id.split("-");
-  var id = temp[temp.length-2];
-  var serv = document.getElementById("serv-" + id + "-input");
-  var techId = document.getElementById("tech-" + id + "-input").value;
+  var serv = event.currentTarget.parentNode.children[0];
+  var techId = event.currentTarget.parentNode.children[1].value;
   var date = document.getElementById("appt-day-input").value;
   var timeslot = document.getElementById("appt-timeslot-select").value;
   if (techId < 0 || !date || !timeslot || !serv.value) {
@@ -108,22 +106,27 @@ const addBookingService = async function() {
 
   var servInputTemp = document.createElement("select"); 
   servInputTemp.innerHTML = servInput.innerHTML;
-  servInputTemp.id = "serv-" + index + "-input";
+  servInputTemp.className = "serv-input";
 
   var techInputTemp = document.createElement("select");
   techInputTemp.innerHTML = techInput.innerHTML;
-  techInputTemp.id = "tech-" + index + "-input";
+  techInputTemp.className = "tech-input";
   
   var checkAvailableBtn = document.createElement("button");
   checkAvailableBtn.innerHTML = "Check Available";
-  checkAvailableBtn.id = "check-available-"+ index +"-btn";
-  checkAvailableBtn.className = "checkavailablebtn";
+  checkAvailableBtn.className = "check-available-btn";
 
   checkAvailableBtn.addEventListener("click", checkAvailableHandler);
 
-  servTechDiv.append(servInputTemp);
-  servTechDiv.append(techInputTemp);
-  servTechDiv.append(checkAvailableBtn);
+  const servtechdivtemp = document.createElement("div");
+  servtechdivtemp.id = "appt-serv-tech-" + index;
+  servtechdivtemp.className = "appt-serv-tech";
+
+  servtechdivtemp.append(servInputTemp);
+  servtechdivtemp.append(techInputTemp);
+  servtechdivtemp.append(checkAvailableBtn);
+
+  servTechDiv.append(servtechdivtemp);
 }
 
 document
@@ -135,7 +138,6 @@ const aptSubmitBtnHandler = async function () {
   var timeslot = document.getElementById("appt-timeslot-select").value;
   var userId = document.getElementById("customer-name-div").dataset.userId;
   var apptId;
-
   try {
     var response = await fetch('/api/appointments/', {
       method: 'POST',
@@ -151,11 +153,11 @@ const aptSubmitBtnHandler = async function () {
   }
 
   var servTechDiv = document.getElementById("service-tech-div");
-  var totalServices = (servTechDiv.children.length-servTechDiv.children.length%3)/3;
+  var totalServices = servTechDiv.children.length;
   var bookingData = [];
   for (let i=1; i<=totalServices; i++) {
-    let servId = document.getElementById("serv-"+i+"-input").value;
-    let techId = document.getElementById("tech-"+i+"-input").value;
+    let servId = servTechDiv.children[i-1].children[0].value;
+    let techId = servTechDiv.children[i-1].children[1].value;
     if (servId > 0) {
       if (techId == 0) bookingData.push({"appointment_id": apptId, "service_id": servId });
       else if (techId > 0) bookingData.push({"appointment_id": apptId, "service_id": servId, "user_id": techId});
