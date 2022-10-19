@@ -29,7 +29,9 @@ const appData = await Bookings.update(
     return res.json(appData);});
 
 
-// delete Bookings
+
+    // delete Bookings
+
 router.delete('/:user_id/:id', async (req, res) => {
 const appData = await Bookings.destroy({
     where: {
