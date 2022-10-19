@@ -10,7 +10,7 @@
         "email": "julia@gmail.com",
         "first_name": "Julia",
         "last_name": "Brown",
-        "phone": "0000000001",
+        "phone": "7145897486",
         "password": "JuliaBrown",
         "role": "customer"
     },
@@ -66,7 +66,7 @@
         "email": "john@gmail.com",
         "first_name": "John",
         "last_name": "Nguyen",
-        "phone": "0000000004",
+        "phone": "0000000008",
         "password": "JohnNguyen",
         "role": "technician"
     }

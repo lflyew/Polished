@@ -1,6 +1,7 @@
-# Team Profile Generator
+# Polished Appointment Booking Application
 
-## Description
+## Description 
+A handy tool for managers and technicians to keep track of upcoming appointments. Clients can book their appointment directly through the application but signing up through the login page, once in the Polished system clients can select their favorite technician, preferred appointment time (based on availability) through the built in calander. When the client has finished their appointment a SMS message will be sent from the application to rate the customer's overall satisfaction.
 
   ## Table of Contents
   - [Installation](#installation)
@@ -13,13 +14,20 @@
 
 ## Installation
   ```
-  git clone ....
-  npm i -> install the packages
-  source schema.sql
-  npm run sedd -> adding database
-  ```
+   git clone ....
+   npm i -> install the packages
+   source schema.sql
+   npm run seed -> adding database
+  ``` 
+
   
-## Features
+## Features 
+```
+Online booking options in real time
+Intelligent calendar to manage appointments easier
+Automated SMS messaging to clients 
+Client 
+```
   
 ## Usage
 
