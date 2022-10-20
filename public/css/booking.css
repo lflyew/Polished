@@ -78,11 +78,11 @@
     border-color: #1E252B;
   }
 
-.appt-submit-div {
+.appt-submit-div, .appt-update-div {
     text-align: right;
 }
 
-#appt-submit-btn {
+#appt-submit-btn, #appt-update-btn {
     cursor: pointer;
   
     font-family: 'Bebas Neue', cursive;

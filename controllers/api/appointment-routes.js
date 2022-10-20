@@ -20,6 +20,23 @@ router.get('/', withAuth, isManager, async (req, res) => {
     }
 });
 
+router.get('/:apptId', withAuth, async (req, res) => {
+    try {
+        const appt_id = req.params.apptId;
+        const apptData = await Appointment.findOne({
+            where: {
+                id: appt_id
+            },
+            include: Booking
+        });
+        var appointment = apptData.get({plain: true});
+        res.status(200).json(appointment);
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.post("/available", withAuth, async(req, res) => {
     try {
         const apptData = await Appointment.findAll({
@@ -55,7 +72,6 @@ router.post("/", withAuth, async(req, res) => {
                 user_id: userId
         });
         const appt = apptData.get({plain: true});
-        console.log(appt);
         if (appt) {
             const user = await User.findOne({
                 raw: true,
@@ -70,5 +86,23 @@ router.post("/", withAuth, async(req, res) => {
         res.status(500).json(err);
     }
 });
+
+router.put("/", withAuth, async(req, res) => {
+});
+
+router.delete("/", withAuth, async(req, res) => {
+    try {
+        var apptId = req.body.apptId;
+        console.log(apptId);
+        var apptData = await Appointment.destroy({
+            where: { 
+                id: apptId
+            }
+        });
+        if (apptData) res.status(200).json(apptData);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+})
 
 module.exports = router;
