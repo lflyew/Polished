@@ -1,9 +1,12 @@
 const router = require('express').Router();
-const approutes = require('./appointments');
-const bookingroutes = require('./bookings')
+const apptRoutes = require('./appointment-routes');
+const userRoutes = require('./user-routes');
+const servRoutes = require('./service-routes');
+const bookingRoutes = require('./booking-routes');
 
-router.use('/appointments', approutes)
-router.use('/bookings', bookingroutes)
-
+router.use('/appointments', apptRoutes);
+router.use('/users', userRoutes);
+router.use('/services', servRoutes);
+router.use('/bookings', bookingRoutes);
 
 module.exports = router;
