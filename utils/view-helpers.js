@@ -9,8 +9,9 @@ module.exports = {
     },
     getFormattedTimeslot:  (timeSlot) => {
         // open at 9:30 closed at 7:30
-       var minute = (timeSlot+1)%4*15;
-       var hour = (timeSlot+1-(timeSlot+1)%4)/4+9;
+        var time_slot = parseInt(timeSlot);
+       var minute = (time_slot+1)%4*15;
+       var hour = (time_slot+1-(time_slot+1)%4)/4+9;
        if (minute<10) minute = "0" + minute;
        if (hour<10) hour = "0" + hour;
        return hour + ":" + minute;

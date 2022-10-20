@@ -22,5 +22,5 @@ const isManager = (req, res, next) => {
   }
 };
   
-  module.exports = { withAuth, isCustomer, isManager }
+module.exports = { withAuth, isCustomer, isManager }
   

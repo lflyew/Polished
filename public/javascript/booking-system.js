@@ -30,8 +30,8 @@ const fetchAllServices = async function() {
     headers: { 'Content-Type': 'application/json' },
   });
   if (response.ok) {
-    const servData = await response.json();
-    var services = servData.services;
+    var services = await response.json();
+    globalServices = services;
     for (let i = 0; i <= services.length; i++) {
       const servOpt = document.createElement("option");
       if (i==0) {
@@ -56,7 +56,8 @@ const fetchAllTechnicians = async function() {
     headers: { 'Content-Type': 'application/json' },
   });
   if (response.ok) {
-    const technicians = await response.json();
+    var technicians = await response.json();
+    globalTechnicians = technicians;
     for (let i = -1; i <= technicians.length; i++) {
       const techOpt = document.createElement("option");
       if (i==-1) {
@@ -98,9 +99,6 @@ const checkAvailableHandler = async function (event) {
 
 const addBookingService = async function() {
   const servTechDiv = document.getElementById('service-tech-div');
-
-  await fetchAllServices();
-  await fetchAllTechnicians();
 
   index++;
 
@@ -175,6 +173,9 @@ const aptSubmitBtnHandler = async function () {
     alert(err);
   }
 }
+
+fetchAllServices();
+fetchAllTechnicians();
 
 document
   .querySelector('#appt-submit-btn')
