@@ -7,16 +7,5 @@
 <hr>
 <div class="flex-container flex-row">
     {{> booking-system}}
-    <ul class="appointment-customer-history">
-        <div class="appointment-title">Your Appointments</div>
-        <div class="each-appointment-history">
-        {{#each user.appointments as | appt |}}
-            <li class="appointment-customer-li">
-                <p data-date={{appt.date}} data-time-slot={{appt.time_slot}}>{{appt.date}} at {{getFormattedTimeslot appt.time_slot}}</p>
-                <button>edit</button>
-                <button>delete</button>
-            </li>
-        {{/each}}
-        </div>
-    </ul>
+    {{> appointments-list}}
 </div>

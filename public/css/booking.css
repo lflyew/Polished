@@ -106,7 +106,9 @@
 .appointment-customer-li {
     font-size: 20px;
     font-family: 'Urbanist', sans-serif;
-    text-align: center;
+    margin: 10px 80px;
+    border-bottom: 1px;
+    border-style: dashed;
 }
 
 .appointment-customer-li p {
@@ -114,6 +116,8 @@
 }
 
 .appointment-customer-li button {
+    position: relative;
+    float: right;
     cursor: pointer;
     color: black; 
     font-size: 15px;
@@ -122,6 +126,7 @@
     border-width: 1px;
     border-style: solid;
     border-color: #1E252B;
+    margin-left: 10px;
 }
 
 @media screen and (min-width: 1000px) {  

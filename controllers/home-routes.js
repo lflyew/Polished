@@ -52,6 +52,12 @@ router.get('/appointment', withAuth, isCustomer, async (req, res) => {
         if (!userData) res.status(404).json({"messange": "there is no users"});
         else {
             var user = userData.get({ plain: true});
+            var today = new Date().toJSON().slice(0,10);
+            user.appointments = user.appointments.filter(appt => appt.date > today);
+            user.appointments.sort((userA, userB) => {
+                if (userA.date < userB.date) return -1; 
+                else if (userA.date == userB.date && userA.time_slot < userB.time_slot) return -1;
+            });
             res.render('appointment', {
                 user: user,
                 user_id: req.session.user_id,

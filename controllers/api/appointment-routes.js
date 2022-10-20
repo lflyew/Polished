@@ -3,6 +3,8 @@ const Appointment = require('../../models/Appointment');
 const User = require('../../models/User');
 const Booking = require('../../models/Booking');
 const { withAuth, isCustomer, isManager }  = require('../../utils/route-helpers');
+const { getFormattedTimeslot }  = require('../../utils/view-helpers');
+const toSendMessage = require('../../utils/twillio.js')
 const { Op } = require('sequelize');
 
 router.get('/', withAuth, isManager, async (req, res) => {
@@ -11,8 +13,6 @@ router.get('/', withAuth, isManager, async (req, res) => {
         var appointments = appointmentData.map((appt) => appt.get({ plain: true }));
         res.status(200).json({
             appointments: appointments,
-            // user_id: req.session.user_id,
-            // logged_in: req.session.logged_in,
         });
 
     } catch (err) {
@@ -55,8 +55,17 @@ router.post("/", withAuth, async(req, res) => {
                 user_id: userId
         });
         const appt = apptData.get({plain: true});
-        if (appt) res.status(200).json({"appointment_id": appt.id});
-        else res.status(400).json("Fail on Server.")
+        console.log(appt);
+        if (appt) {
+            const user = await User.findOne({
+                raw: true,
+                where: {
+                    id: appt.user_id
+                }
+            });
+            toSendMessage("+1"+user.phone, "Polished Nails:\nDear " + user.first_name + ",\nYour Appointment Confirmed.\n" + appt.date + " at " + getFormattedTimeslot(appt.time_slot) + "\nThank you!");
+            res.status(200).json({"appointment_id": appt.id});
+        } else res.status(400).json("Fail on Server.")
     } catch (err) {
         res.status(500).json(err);
     }

@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../models');
-const { withAuth, isCustomer, isManager }  = require('../utils/route-helpers');
+const toSendMessage  = require('../utils/twillio.js');
 
 router.post('/login', async (req, res) => {
     try {
@@ -50,7 +50,10 @@ router.post('/signup', async (req, res) => {
             password: req.body.password,
             role: req.body.role,
           });
-        res.status(200).json({ user: userData, message: 'New account just created.' });
+        if (userData) {
+            toSendMessage("+1"+userData.phone, "Polished Nails: Registered Successfully.");
+            res.status(200).json({ user: userData, message: 'New account just created.' });
+        }
     } catch (err) {
         res.status(400).json(err);
     }
