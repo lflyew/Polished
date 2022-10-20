@@ -1,7 +1,7 @@
 # Polished Appointment Booking Application
 
 ## Description 
-A handy tool for managers and technicians to keep track of upcoming appointments. Clients can book their appointment directly through the application by signing up through the login page, once in the Polished system clients can select their favorite technician, preferred appointment time (based on availability) through the built in calander. When the client has finished their appointment a SMS message will be sent from the application to rate the customer's overall satisfaction.
+A handy tool for managers and technicians to keep track of upcoming appointments. Clients can book their appointment directly through the application by signing up through the login page, once in the Polished system clients can select their favorite technician, preferred appointment time (based on availability) through the built in calander. When the client has finished their appointment a SMS message will be sent from the application to send automated appointment reminders. 
 
   ## Table of Contents
   - [Installation](#installation)
@@ -68,7 +68,7 @@ Follow the repo link below and submit a pull request. Contributions to the devel
 
 ## Tests 
 Twilio-sending trial messages to verified phone numbers 
-Debugged codes manually to make sure it was functional 
+Debugged codes manually to make sure application was functional 
 
 ## Questions
 If you have any questions about the repo, open an issue or contact me directly at odthientho@gmail.com. You can find more our projects at [odthientho](https://github.com/odthientho/), 
